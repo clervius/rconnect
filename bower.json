@@ -1,0 +1,17 @@
+{
+  "name": "reconnect",
+  "description": "Reconnect Application, Advent Software",
+  "main": "index.js",
+  "authors": [
+    "Joram Clervius"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/clervius/rconnect",
+  "dependencies": {
+    "jquery": "^3.0.0",
+    "angular": "^1.5.7",
+    "angular-resource": "^1.5.7",
+    "angular-route": "^1.5.7",
+    "toastr": "^2.1.2"
+  }
+}
