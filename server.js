@@ -14,6 +14,9 @@ require('./server/config/mongoose')(config);
 // routes
 require('./server/config/routes')(app);
 
+
+
+
 //server
 app.listen(config.port);
 console.log('Advent is listening on port ' + config.port + '...');

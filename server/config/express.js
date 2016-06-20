@@ -5,8 +5,6 @@ var express = require('express');
 	cookieParser = require('cookie-parser');
 	session = require('express-session');
 	passport = require('passport');
-
-
 module.exports = function(app, config){
 
 	//configs
