@@ -26,11 +26,14 @@ var taxpayerSchema = new Schema({
 	email: String,
 	pNumber: Number,
 	filingStatus : String,
-	tpDob: Date
+	tpDob: Date,
 	numDdep: Number,
 	dependents: [dependentSchema],
 	income: [incExSchema]
 });
 
+//============================================================
+
 module.exports = mongoose.model('taxpayer', taxpayerSchema);
+
 

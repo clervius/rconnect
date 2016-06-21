@@ -5,8 +5,8 @@ module.exports = function(app){
 
 	//routes
 	app.get('*', function(req, res){
-		res.render('index', {taxpayers: taxpayers});
-		console.log(taxpayers)
+		res.render('index');
+		//console.log(taxpayers)
 	})
 
 }

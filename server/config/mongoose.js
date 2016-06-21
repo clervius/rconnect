@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 	path = require('path');
+	taxpayer = require('../models/taxpayer');
+	addData = require('../models/addData')
 
 module.exports = function(config, taxpayer){
 	mongoose.connect(config.db);
@@ -10,4 +12,5 @@ module.exports = function(config, taxpayer){
 		console.log('db connection established in ' + config.where + ' at ' + config.db );
 	});
 
+	addData(taxpayer);
 }
