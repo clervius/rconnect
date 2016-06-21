@@ -1,0 +1,60 @@
+extends ../includes/applayout
+
+block head
+	nav.navbar.navbar-primary.navbar-fixed-top
+		.container
+			.navbar-header
+				a(href="/app") 
+					img(src="/img/logo_white.png")
+			.collapse.navbar-collapse
+				ul.nav.navbar-nav.col-md-6
+					li.col-md-12
+						.form-group.label-floating.has-info
+							label.control-label Type to search...
+							input.form-control(type="search", id="topSearch")
+							span.form-control-feedback
+								i.material-icons search
+
+				ul.nav.navbar-nav.navbar-right.nav-tabs
+					li.dropdown
+						a.btn.dropdown-toggle(id="loginLink", data-toggle="dropdown", ara-expanded="false") johnpdos &nbsp;&nbsp;
+							b.caret 
+							.ripple-container
+						ul.dropdown-menu.dropdown-menu-right
+							li.dropdown-header Admin settings
+							li
+								a(href="#") 
+									i.material-icons person
+									| Account
+							li
+								a(href="#") 
+									i.material-icons add_alert
+									| Notifications
+							li.divider
+							li
+								a(href="#") 
+									i.material-icons exit_to_app
+									| Logout
+
+
+block nav
+	.col-md-3
+		ul.list-unstyled(id="mainNav")
+			li
+				a.btn.btn-raised.btn-primary 
+					i.material-icons supervisor_account
+					| &nbsp;&nbsp;&nbsp; HOME 
+					span.pull-right 25
+					.ripple-container
+			li
+				a.btn 
+					i.material-icons thumb_up
+					| &nbsp;&nbsp;&nbsp; ACCEPTED
+					span.pull-right 15
+					.ripple-container
+			li
+				a.btn 
+					i.material-icons timer
+					| &nbsp;&nbsp;&nbsp; PENDING
+					span.pull-right 7
+					.ripple-container

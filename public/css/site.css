@@ -1,0 +1,22 @@
+.navbar-header {
+  width: 150px;
+  margin-right: 35px;
+}
+.navbar-header a,
+#loginLink {
+  display: block;
+  padding-top: 24px;
+}
+.navbar-header a img {
+  width: 100%;
+}
+#topSearch {
+  color: #fff;
+}
+#mainBody {
+  margin-top: 120px;
+}
+#mainNav li a {
+  width: 100%;
+  text-align: left;
+}

@@ -1,0 +1,9 @@
+div.col-md-9
+    each taxpayer in taxpayers
+        .clearfix.col-md-12(style="margin-bottom:25px")
+            .col-md-9
+                .card.card-nav-tabs
+                    .header.header-primary
+                        p #{taxpayer.firstName}
+                    .content
+                        p the rest is #{taxpayer.lastName} and #{taxpayer.email}
