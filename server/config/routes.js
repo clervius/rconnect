@@ -4,6 +4,11 @@ module.exports = function(app, taxpayer, db){
 	
 	var	taxpayer = mongoose.model('taxpayer');
 	//routes
+	app.get('/partials/*', function(req, res){
+	    res.render('../../public/app/' + req.params[0]);
+	});
+
+	
 	app.get('*', function(req, res){
 		taxpayer.find({}).exec(function(err, taxpayers){
 			if(err){
@@ -15,33 +20,7 @@ module.exports = function(app, taxpayer, db){
 			}
 		});
 
-		/*
-		res.render('index', function(){
-			taxpayer.find({}).exec(function(err, taxpayers){
-				if(err){
-					console.log('did not find taxpayers');
-				}else{
-					taxpayers: taxpayers
-					console.log('things look ok');
-				console.log(taxpayers[1])
-				}
-			});
-		});
-
-
-
-		taxpayer.find({}).exec(function(err, taxpayers){
-			if(err){
-				console.log('did not find taxpayers');
-			}else{
-				res.render('index', {
-					taxpayers: taxpayers
-				});
-				console.log('things look ok');
-				console.log(taxpayers[0])
-			}
-		});*/
-
+		
 		
 		
 	})
