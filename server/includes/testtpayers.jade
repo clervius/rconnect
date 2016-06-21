@@ -1,9 +1,24 @@
 div.col-md-9
-    each taxpayer in taxpayers
-        .clearfix.col-md-12(style="margin-bottom:25px")
-            .col-md-9
-                .card.card-nav-tabs
-                    .header.header-primary
-                        p #{taxpayer.firstName}
-                    .content
-                        p the rest is #{taxpayer.lastName} and #{taxpayer.email}
+	each taxpayer in taxpayers
+		.clearfix.col-md-12(style="margin-bottom:25px")
+			.col-md-9
+				.card.card-nav-tabs
+					.header.header-primary
+						.nav-tabs-navigation
+							.nav-tabs-wrapper
+								ul.nav.nav-tabs
+									li 
+										a 
+											i.material-icons person
+											|Taxpayer in 
+											strong Tamarac, FL
+									li.pull-right.text-right
+										a.btn.btn-info.btn-sm.btn-raised(href="") View                        	
+					.content
+						p the rest is #{taxpayer.lastName} and #{taxpayer.email}
+			.col-md-3
+				ul.list-unstyled(style="padding-top:55px")
+					li #{taxpayer._id.getTimestamp().toDateString()} 
+					li.text-danger
+						small Submitted
+					

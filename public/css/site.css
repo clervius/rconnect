@@ -2,13 +2,13 @@
   width: 150px;
   margin-right: 35px;
 }
-.navbar-header a,
+#logoLink,
 #loginLink {
   display: block;
   padding-top: 24px;
 }
-.navbar-header a img {
-  width: 100%;
+#headerLogo {
+  width: 50%;
 }
 #topSearch {
   color: #fff;

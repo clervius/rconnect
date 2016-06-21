@@ -9,7 +9,7 @@ module.exports = function(app, taxpayer, db){
 			if(err){
 				res.render('app');
 				console.log('did not get tpayers');
-			}else{
+			}else{				
 				res.render('app', { taxpayers : taxpayers});
 				console.log(taxpayers[0]);
 			}
