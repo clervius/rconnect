@@ -13,12 +13,27 @@ div.col-md-9
 											|Taxpayer in 
 											strong Tamarac, FL
 									li.pull-right.text-right
-										a.btn.btn-info.btn-sm.btn-raised(href="") View                        	
+										a.btn.btn-info.btn-sm.btn-raised(href="/app/taxpayer/#{taxpayer._id}") View                        	
 					.content
-						p the rest is #{taxpayer.lastName} and #{taxpayer.email}
+						table.table
+							thead
+								tr
+									th Status
+									th AGI
+									th Fed. Tax
+									th St. Tax
+									th Dep.
+							tbody
+								tr
+									td #{taxpayer.filingStatus}
+									td #{taxpayer.income[0].income}
+									td #{taxpayer.income[0].fdTax}
+									td #{taxpayer.income[0].stTax}
+									td #{taxpayer.numDdep}
 			.col-md-3
 				ul.list-unstyled(style="padding-top:55px")
-					li #{taxpayer._id.getTimestamp().toDateString()} 
 					li.text-danger
 						small Submitted
+					li #{taxpayer._id.getTimestamp().toDateString()} 
+					
 					
