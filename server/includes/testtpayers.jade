@@ -11,9 +11,11 @@ div.col-md-9
 										a 
 											i.material-icons person
 											|Taxpayer in 
-											strong Tamarac, FL
+											strong #{taxpayer.city}, #{taxpayer.state}
 									li.pull-right.text-right
-										a.btn.btn-info.btn-sm.btn-raised(href="/app/taxpayer/#{taxpayer._id}") View                        	
+										a.btn.btn-info.btn-sm.btn-raised(href="/app/taxpayer/#{taxpayer._id}") 
+											i.material-icons launch
+											|View                        	
 					.content
 						table.table
 							thead
