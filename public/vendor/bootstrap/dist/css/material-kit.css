@@ -2482,7 +2482,7 @@ h6, .h6 {
   background-color: #FFFFFF;
 }
 .card .header-primary {
-  background: linear-gradient(60deg, #36414d, #001325);
+  background: linear-gradient(60deg, #001325, #687079);
 }
 .card .header-info {
   background: linear-gradient(60deg, #b6ced4, #a3c1c9);

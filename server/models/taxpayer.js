@@ -29,6 +29,7 @@ var taxpayerSchema = new Schema({
 	zip: Number,
 	pNumber: Number,
 	filingStatus : String,
+	student: Boolean,
 	tpDob: Date,
 	numDdep: Number,
 	dependents: [dependentSchema],

@@ -17,6 +17,7 @@ module.exports = function(taxpayer){
 					zip: 33319,
 					pNumber: 9543247726,
 					filingStatus : "hoh",
+					student: false,
 					tpDob: 12/30/1988,
 					numDdep: 1,
 					dependents: [
@@ -50,6 +51,7 @@ module.exports = function(taxpayer){
 					zip: 33321,
 					pNumber: 9542348134,
 					filingStatus : "hoh",
+					student: true,
 					tpDob: 01/10/1980,
 					numDdep: 1,
 					dependents: [
@@ -83,6 +85,7 @@ module.exports = function(taxpayer){
 					zip: 33067,
 					pNumber: 9542348134,
 					filingStatus : "s",
+					student: true,
 					tpDob: 05/10/1976,
 					numDdep: 2,
 					dependents: [
@@ -122,6 +125,7 @@ module.exports = function(taxpayer){
 					zip: 33067,
 					pNumber: 9542004535,
 					filingStatus : "mfj",
+					student: false,
 					tpDob: 10/29/1989,
 					numDdep: 0,
 					dependents: [],
@@ -142,6 +146,7 @@ module.exports = function(taxpayer){
 					zip: 95478,
 					pNumber: 9548548621,
 					filingStatus : "s",
+					student: false,
 					tpDob: 12/13/1996,
 					numDdep: 1,
 					dependents: [
