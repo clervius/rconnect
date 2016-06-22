@@ -24,6 +24,7 @@ div.col-md-9
 									th AGI
 									th Fed. Tax
 									th St. Tax
+									th Student
 									th Dep.
 							tbody
 								tr
@@ -31,11 +32,20 @@ div.col-md-9
 									td #{taxpayer.income[0].income}
 									td #{taxpayer.income[0].fdTax}
 									td #{taxpayer.income[0].stTax}
+									if taxpayer.student
+										td Yes
+									else
+										td No
 									td #{taxpayer.numDdep}
 			.col-md-3
 				ul.list-unstyled(style="padding-top:55px")
 					li.text-danger
 						small Submitted
 					li #{taxpayer._id.getTimestamp().toDateString()} 
+					li.text-danger
+						small 
+							i.material-icons(style="font-size:12px") access_time
+							| &nbsp;&nbsp;Elapsed
+					li 1 day, 2:00
 					
 					
