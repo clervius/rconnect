@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
-var	taxpayer = require('./taxpayer');
+var	taxpayer = require('../api/taxpayer/taxpayer.model');
 
 
 
 module.exports = function(taxpayer){
 	//var taxpayer = mongoose.model('taxpayer')
-	var	taxpayer = require('./taxpayer');
+	var	taxpayer = require('../api/taxpayer/taxpayer.model');
 	taxpayer.find({}).exec(function(err, collection){
 			if(collection.length === 0) {
 				taxpayer.create({

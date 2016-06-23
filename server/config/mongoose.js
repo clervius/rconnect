@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 	path = require('path');
-	taxpayer = require('../models/taxpayer');
+	taxpayer = require('../api/taxpayer/taxpayer.model');
 	addData = require('../models/addData')
 
 module.exports = function(config, taxpayer){

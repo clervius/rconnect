@@ -1,9 +1,14 @@
+'use strict';
+
+var path = require('path');
 var mongoose = require('mongoose');
 
 module.exports = function(app, taxpayer, db){
 	
-	var	taxpayer = mongoose.model('taxpayer');
+	//var	taxpayer = mongoose.model('taxpayer');
 	//routes
+	app.get('/app/*', require('../api/taxpayer'));
+	/*
 	app.get('/app/*', function(req, res){
 		taxpayer.find({}).exec(function(err, taxpayers){
 			if(err){
@@ -14,7 +19,8 @@ module.exports = function(app, taxpayer, db){
 				console.log(taxpayers[0]);
 			}
 		});
-	});
+	});*/
+
 
 	app.get('/partials/*', function(req, res){
 	    res.render('../../public/app/' + req.params[0]); 

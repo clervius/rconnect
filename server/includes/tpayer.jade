@@ -1,0 +1,88 @@
+.clearfix.col-md-12(style="margin-bottom:25px")
+	.col-md-9
+		.card.card-nav-tabs
+			.header.header-primary
+				.nav-tabs-navigation
+					.nav-tabs-wrapper
+						ul.nav.nav-tabs
+							li 
+								a 
+									i.material-icons person
+									|Taxpayer in 
+									strong #{taxpayer.city}, #{taxpayer.state}                       	
+			.content
+				h6 Taxpayer information
+				table.table
+					thead
+						tr
+							th Filing Status
+							th DOB
+							th Student
+							th Dependents
+					tbody
+						tr
+							td #{taxpayer.filingStatus}
+							td #{taxpayer.tpDob.getMonth()+1}/#{taxpayer.tpDob.getDay()}/#{taxpayer.tpDob.getFullYear()}
+							td #{taxpayer.student}
+							td #{taxpayer.numDdep}
+				.clearfix
+				br
+				br
+				h6 Dependent information
+				table.table
+					thead
+						tr
+							th DOB
+							th Student
+							th Disabled
+							th Live with?
+					tbody
+						each dependent in taxpayer.dependents
+							tr
+								td #{dependent.depDob.getMonth()+1}/#{dependent.depDob.getDay()}/#{dependent.depDob.getFullYear()}
+								td #{dependent.depStudent}
+								td #{dependent.depDisabled}
+								td #{dependent.depLive}
+				.clearfix
+				br
+				br
+				h6 Income information
+				table.table
+					thead
+						tr
+							th Type
+							th Income
+							th fed Tax
+							th St Tax
+					tbody
+						each income in taxpayer.income
+							tr
+								td #{income.inType}
+								td #{income.income}
+								td #{income.fdTax}
+								td #{income.stTax}
+				br
+				br
+				hr
+				form
+					.col-sm-8
+						.form-group.label-floating.has-primary
+							label.control-label Enter Quote
+							input.form-control
+							span.form-control-feedback
+								i.material-icons attach_money
+					.col-sm-4
+						input.btn.btn-primary.btn-raised(type="submit", value="Send Quote")
+
+	.col-md-3
+		ul.list-unstyled(style="padding-top:55px")
+			li.text-danger
+				small Submitted
+			li #{taxpayer._id.getTimestamp().toDateString()} 
+			hr
+			li.text-danger
+				small 
+					i.material-icons(style="font-size:12px") access_time
+					| &nbsp;&nbsp;Elapsed
+			li 1 day, 2:00
+					
