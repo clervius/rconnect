@@ -33,14 +33,9 @@ exports.singleTaxpayer = function(req, res){
 		//return res.json(taxpayer);
 		res.render('singletpayer', {taxpayer: taxpayer, pageTitle: "Taxpayer in " + taxpayer.city});
 	});
-	//taxpayer.findById(req.params.id, )
+	
 };
 
-exports.pendingTaxpayers = function(req, res){};
-exports.onePendingTaxpayer = function(req, res){};
-
-exports.acceptedTaxpayers = function(req, res){};
-exports.oneAcceptedTaxpayers = function(req, res){};
 
 function handleError(res, err){
 	return res.send(500, err)
