@@ -9,7 +9,7 @@ var quoteSchema = new Schema({
 		ref: 'taxpayer'
 	},
 	_creator: {
-		type:Schema.ObjectId,
+		type: Schema.ObjectId,
 		ref: 'user'
 	},
 	quote: Number,
@@ -20,4 +20,15 @@ var quoteSchema = new Schema({
 	}
 });
 
+var autoPopulateQuote = function(next){
+	this.populate('_tpayer');
+	///this.populate('_creator');
+	next();
+}
+
+quoteSchema.pre('findOne', autoPopulateQuote).pre('find', autoPopulateQuote);
+
 module.exports = mongoose.model('quote', quoteSchema);
+
+
+

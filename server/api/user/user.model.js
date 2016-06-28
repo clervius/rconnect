@@ -25,4 +25,11 @@ var userSchema = new Schema({
 	salt: String
 });
 
+var autoPopulateUser = function(next){
+	this.populate('_subscription');
+	next();
+}
+
+userSchema.pre('findOne', autoPopulateUser).pre('find', autoPopulateUser);
+
 module.exports = mongoose.model('user', userSchema);
