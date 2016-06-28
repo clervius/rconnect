@@ -2,8 +2,11 @@
 
 var _ = require('lodash');
 var taxpayer = require('./taxpayer.model');
+var quote = require('../quotes/quote.model');
 var path = require('path');
 var express = require('express');
+
+
 
 exports.newTaxpayers = function(req, res){
 	taxpayer.find({})
@@ -14,10 +17,22 @@ exports.newTaxpayers = function(req, res){
 			if(!taxpayers){
 				return res.send(404);
 			}
-			console.log(taxpayers);
-			//return res.status(200)
-				//.json(taxpayers);
-			res.render('app', {taxpayers: taxpayers, pageTitle: "Taxpayer reconnect", page: "testtpayers"});
+			
+			quote.find({}).exec(function(err, quotes){
+				if(err){
+					return handleError(res, err)
+				}
+				if(!quotes){
+					console.log(taxpayers);
+					res.render('app', {taxpayers: taxpayers, pageTitle: "Taxpayer reconnect", page: "testtpayers"});
+				}
+				else{
+					console.log(taxpayers);
+					console.log(quotes);
+					res.render('app', {taxpayers: taxpayers, quotes: quotes, pageTitle: "Taxpayer reconnect", page: "testtpayers"});
+				}
+			})
+			
 		});
 };
 exports.singleTaxpayer = function(req, res){

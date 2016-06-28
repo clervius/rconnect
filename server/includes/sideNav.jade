@@ -1,19 +1,19 @@
 .col-md-3
 	ul.list-unstyled(id="mainNav", data-spy="affix", data-offset-top="250")
 		li
-			a.btn.btn-raised.btn-primary 
+			a.btn.btn-raised.btn-primary(href="/app/")
 				i.material-icons supervisor_account
 				| &nbsp;&nbsp;&nbsp; HOME 
-				span.pull-right 25
+				span.pull-right #{taxpayers.length}
 				.ripple-container
 		li
-			a.btn 
+			a.btn(href="/app/accepted")
 				i.material-icons thumb_up
 				| &nbsp;&nbsp;&nbsp; ACCEPTED
-				span.pull-right 15
+				span.pull-right #{quotes.length}
 				.ripple-container
 		li
-			a.btn 
+			a.btn(href="/app/pending") 
 				i.material-icons timer
 				| &nbsp;&nbsp;&nbsp; PENDING
 				span.pull-right 7

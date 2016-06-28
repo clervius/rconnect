@@ -8,6 +8,7 @@ module.exports = function(app, taxpayer, db){
 	//var	taxpayer = mongoose.model('taxpayer');
 	//routes
 	app.get('/app/*', require('../api/taxpayer'));
+	app.get('/app/accepted/*', require('../api/quotes'))
 	/*
 	app.get('/app/*', function(req, res){
 		taxpayer.find({}).exec(function(err, taxpayers){

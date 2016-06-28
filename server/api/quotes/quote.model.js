@@ -5,11 +5,11 @@ var Schema = mongoose.Schema;
 
 var quoteSchema = new Schema({
 	_tpayer : {
-		type:Schema.objectId,
+		type: Schema.ObjectId,
 		ref: 'taxpayer'
 	},
 	_creator: {
-		type:Schema.objectId,
+		type:Schema.ObjectId,
 		ref: 'user'
 	},
 	quote: Number,
