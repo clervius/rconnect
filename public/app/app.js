@@ -1,15 +1,14 @@
-angular.module('app', ['ngResource', 'ngRoute']);
 
-// set up routes in angular
-angular.module('app').config(function($routeProvider, $locationProvider) {
-	// make urls clean
-	$locationProvider.html5Mode(true);
-	// define the routes
-	$routeProvider
-		.when('/app/', {
-			templateUrl: '/partials/main/main',
-			controller: 'mvMainCtrl'
-		})
-	
 
-})
+	angular.module('app', ['ngResource', 'ngRoute'] );
+
+	angular.module('app').config(function($routeProvider, $locationProvider){
+	    $locationProvider.html5Mode(true);
+	    $routeProvider
+	        .when('/app/', {
+	            templateUrl: '../partials/main/main',
+	            controller: 'mvMainCtrl'
+	        })
+	});
+
+

@@ -9,9 +9,11 @@ var config = require('./server/config/config')[env];
 
 //express setup
 require('./server/config/express')(app, config);
+
 // db setup
 require('./server/config/mongoose')(config);
 // routes
+
 require('./server/config/routes')(app);
 
 

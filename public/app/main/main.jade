@@ -1,0 +1,45 @@
+.clearfix.col-md-12(style="margin-bottom:25px")
+	.col-md-9
+		.card.card-nav-tabs
+			.header.header-primary
+				.nav-tabs-navigation
+					.nav-tabs-wrapper
+						ul.nav.nav-tabs
+							li 
+								a 
+									i.material-icons person
+									|Taxpayer in 
+									strong city and state
+							li.pull-right.text-right
+								a.btn.btn-primary.btn-sm.btn-raised(href="/app/taxpayer/") 
+									i.material-icons launch
+									|View                        	
+			.content
+				table.table
+					thead
+						tr
+							th Status
+							th AGI
+							th Fed. Tax
+							th St. Tax
+							th Student
+							th Dep.
+					tbody
+						tr
+							td 01
+							td 02
+							td 03
+							td 04
+							td Yes							
+							td 05
+	.col-md-3
+		ul.list-unstyled(style="padding-top:55px")
+			li.text-danger
+				small Submitted
+			li time
+			hr
+			li.text-danger
+				small 
+					i.material-icons(style="font-size:12px") access_time
+					| &nbsp;&nbsp;Elapsed
+			li 1 day, 2:00

@@ -6,7 +6,7 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
         meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport')
         
-        title #{pageTitle}
+        title Reconnect App
         link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")        
         link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
         link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700", rel="stylesheet")
@@ -15,12 +15,12 @@ html(lang="en")
         link(href="/vendor/bootstrap/dist/css/bootstrap.css", rel="stylesheet", type="text/css")
         link(href="/vendor/bootstrap/dist/css/material-kit.css", rel="stylesheet", type="text/css")
         link(href="/css/site.css", rel="stylesheet", type="text/css")
-    body
-        include header
+    body(ng-app="app")
+        include ../../public/app/header/header
         section.wrapper(id="mainBody")
             .container
                 .row
-                    include sideNav
-                    .col-md-9
-                        block page
-        include appscripts
+                    include ../../public/app/sidenav/sidenav
+                    .col-md-9(ng-view)
+        block footer
+        include ../../public/app/footer/appscripts
