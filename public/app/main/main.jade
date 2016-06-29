@@ -1,4 +1,4 @@
-.clearfix.col-md-12(style="margin-bottom:25px")
+.clearfix.col-md-12(ng-repeat="taxpayer in taxpayers", style="margin-bottom:25px")
 	.col-md-9
 		.card.card-nav-tabs
 			.header.header-primary
@@ -9,9 +9,9 @@
 								a 
 									i.material-icons person
 									|Taxpayer in 
-									strong city and state
+									strong {{ taxpayer.city }}, {{ taxpayer.state }}
 							li.pull-right.text-right
-								a.btn.btn-primary.btn-sm.btn-raised(href="/app/taxpayer/") 
+								a.btn.btn-primary.btn-sm.btn-raised(href="/app/taxpayer/{{ taxpayer._id }}") 
 									i.material-icons launch
 									|View                        	
 			.content
@@ -26,17 +26,17 @@
 							th Dep.
 					tbody
 						tr
-							td 01
-							td 02
-							td 03
-							td 04
-							td Yes							
-							td 05
+							td {{ taxpayer.filingStatus }}
+							td {{ taxpayer.income[0].income | currency }}
+							td {{ taxpayer.income[0].fdTax | currency }}
+							td {{ taxpayer.income[0].stTax | currency }}
+							td {{ taxpayer.student }}							
+							td {{ taxpayer.numDep }}
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
 			li.text-danger
 				small Submitted
-			li time
+			li {{ taxpayer._id.substring(0,8) }}
 			hr
 			li.text-danger
 				small 

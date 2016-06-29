@@ -18,10 +18,7 @@
 		});
 
 		function getAlltpayers() {
-			return $http.get('/app/', {
-				cache: false
-			});
-			console.log('Getting taxpayers')
+			return $http.get('/app/taxpayers/');
 		}
 
 		function getSingletpayer(taxpayer){

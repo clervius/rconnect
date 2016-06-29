@@ -20,7 +20,6 @@
 				console.log('failed to get taxpayers');
 				console.log(err);
 			});
-
 	};
 
 
