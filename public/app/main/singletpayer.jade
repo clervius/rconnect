@@ -1,0 +1,85 @@
+.clearfix.col-md-12(style="margin-bottom:25px")
+	.col-md-9
+		.card.card-nav-tabs
+			.header.header-primary
+				.nav-tabs-navigation
+					.nav-tabs-wrapper
+						ul.nav.nav-tabs
+							li 
+								a 
+									i.material-icons person
+									|Taxpayer in 
+									strong {{ taxpayer.city }}, {{ taxpayer.state }}                       	
+			.content
+				h6 Taxpayer information
+				table.table
+					thead
+						tr
+							th Filing Status
+							th DOB
+							th Student
+							th Dependents
+					tbody
+						tr
+							td {{ taxpayer.filingStatus }}
+							td {{ taxpayer.tpDob | date }}
+							td {{ taxpayer.student | yesNo}}
+							td {{ taxpayer.numDdep }}
+				.clearfix
+				br
+				br
+				h6 Dependent information
+				table.table
+					thead
+						tr
+							th DOB
+							th Student
+							th Disabled
+							th Live with?
+					tbody
+							tr(ng-repeat="dependent in taxpayer.dependents")
+								td {{ dependent.depDob | date }}
+								td {{ dependent.depStudent | yesNo}}
+								td {{ dependent.depDisabled | yesNo}}
+								td {{ dependent.depLive | yesNo }}
+				.clearfix
+				br
+				br
+				h6 Income information
+				table.table
+					thead
+						tr
+							th Type
+							th Income
+							th fed Tax
+							th St Tax
+					tbody
+							tr(ng-repeat="income in taxpayer.income")
+								td {{ income.inType  }}
+								td {{ income.income | currency }}
+								td {{ income.fdTax | currency }}
+								td {{ income.stTax | currency }}
+				br
+				hr
+				form
+					.col-sm-8
+						.form-group.label-floating.has-primary
+							label.control-label Enter Quote
+							input.form-control
+							span.form-control-feedback
+								i.material-icons attach_money
+					.col-sm-4
+						input.btn.btn-primary.btn-raised(type="submit", value="Send Quote")
+
+	.col-md-3
+		ul.list-unstyled(style="padding-top:55px")
+			li.text-danger
+				small Submitted
+			li {{ taxpayer.date | date }} 
+			hr
+			li.text-danger
+				small 
+					i.material-icons(style="font-size:12px") access_time
+					| &nbsp;&nbsp;Elapsed
+			li 1 day, 2:00
+					

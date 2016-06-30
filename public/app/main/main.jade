@@ -11,7 +11,7 @@
 									|Taxpayer in 
 									strong {{ taxpayer.city }}, {{ taxpayer.state }}
 							li.pull-right.text-right
-								a.btn.btn-primary.btn-sm.btn-raised(href="/app/taxpayer/{{ taxpayer._id }}") 
+								a.btn.btn-primary.btn-sm.btn-raised(href="/app/{{ taxpayer._id }}") 
 									i.material-icons launch
 									|View                        	
 			.content
@@ -23,20 +23,20 @@
 							th Fed. Tax
 							th St. Tax
 							th Student
-							th Dep.
+							th Dep(s).
 					tbody
 						tr
 							td {{ taxpayer.filingStatus }}
-							td {{ taxpayer.income[0].income | currency }}
-							td {{ taxpayer.income[0].fdTax | currency }}
-							td {{ taxpayer.income[0].stTax | currency }}
-							td {{ taxpayer.student }}							
-							td {{ taxpayer.numDep }}
+							td {{ taxpayer.income[0].income + taxpayer.income[1].income + taxpayer.income[2].income + taxpayer.income[3].income + taxpayer.income[4].income | currency}}
+							td {{ taxpayer.income[0].fdTax + taxpayer.income[1].fdTax + taxpayer.income[2].fdTax + taxpayer.income[3].fdTax + taxpayer.income[4].fdTax | currency }}
+							td {{ taxpayer.income[0].stTax + taxpayer.income[1].stTax + taxpayer.income[2].stTax + taxpayer.income[3].stTax + taxpayer.income[4].stTax | currency }}
+							td {{ taxpayer.student | yesNo}}							
+							td {{ taxpayer.numDdep }}
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
 			li.text-danger
 				small Submitted
-			li {{ taxpayer._id.substring(0,8) }}
+			li {{ taxpayer.date | date:'MM/dd/yyyy' }}
 			hr
 			li.text-danger
 				small 

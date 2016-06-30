@@ -16,7 +16,7 @@ exports.newTaxpayers = function(req, res){
 			if(!taxpayers){
 				return res.send(404);
 			}else{
-				console.log(taxpayers);
+				console.log(taxpayers);				
 				return res.json(taxpayers);	
 			}
 					
@@ -24,7 +24,7 @@ exports.newTaxpayers = function(req, res){
 };
 
 exports.singleTaxpayer = function(req, res){
-	taxpayer.findOne({_id:req.params.id}, function(err, taxpayer){
+	taxpayer.findOne({_id:req.params.id}).exec(function(err, taxpayer){
 		if(err){
 			return handleError(res, err);
 		}if(!taxpayer){

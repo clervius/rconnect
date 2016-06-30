@@ -22,7 +22,7 @@
 		}
 
 		function getSingletpayer(taxpayer){
-			$http.get('/app/taxpayer/' + taxpayer._id)
+			return $http.get('/app/taxpayers/' + taxpayer)
 		}
 
 		function createQuote(taxpayer){

@@ -1,10 +1,10 @@
-.col-md-3
+.col-md-3(ng-controller="sideNav")
 	ul.list-unstyled(id="mainNav", data-spy="affix", data-offset-top="250")
 		li
 			a.btn.btn-raised.btn-primary(href="/app/")
 				i.material-icons supervisor_account
 				| &nbsp;&nbsp;&nbsp; HOME 
-				span.pull-right 01
+				span.pull-right {{ taxpayers.length }}
 				.ripple-container
 		li
 			a.btn(href="/app/accepted/")

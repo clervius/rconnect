@@ -36,8 +36,13 @@ var taxpayerSchema = new Schema({
 	numDdep: Number,
 	dependents: [dependentSchema],
 	income: [incExSchema]
+}, {
+	toJSON: { virtuals: true}
 });
 
+taxpayerSchema.virtual('date').get(function(){
+	return this._id.getTimestamp();
+})
 //============================================================
 
 module.exports = mongoose.model('taxpayer', taxpayerSchema);

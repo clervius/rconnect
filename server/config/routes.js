@@ -10,7 +10,8 @@ module.exports = function(app){
 		res.render('app');
 	});
 
-	app.get('/app/taxpayers/', require('../api/taxpayer'));
+	app.get('/app/taxpayers/*', require('../api/taxpayer'));
+	//app.get('/app/taxpayers/:id', require('../api/taxpayer'));
 
 	app.get('/partials/*', function(req, res){
 	    res.render('../../public/' + req.params[0]); 
