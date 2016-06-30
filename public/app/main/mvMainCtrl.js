@@ -80,6 +80,17 @@
 				console.log(err);
 			});
 
+		$scope.createQuote = function(){
+			var tpayer = $scope.taxpayer._id;
+
+			appAPI.createQuote(tpayer).then(function(data){
+				console.log('Created Quote');
+				console.log(data);
+			}).catch(function(err){
+				console.log('didnt create quote');
+				console.log(err);
+			});
+		}	
 
 	};
 

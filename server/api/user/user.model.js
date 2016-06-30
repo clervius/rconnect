@@ -11,11 +11,11 @@ var userSchema = new Schema({
 		type: String,
 		lowercase: true
 	},
-	phoneNumber: Number,
+	phoneNumber: Number,/*
 	_subscription: {
 		type: Schema.objectId,
 		ref: 'subscription'
-	},
+	},*/
 	role: {
 		type: String,
 		default: 'user'

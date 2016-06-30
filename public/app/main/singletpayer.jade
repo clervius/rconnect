@@ -11,7 +11,7 @@
 									|Taxpayer in 
 									strong {{ taxpayer.city }}, {{ taxpayer.state }}                       	
 			.content
-				h6 Taxpayer information
+				h4 Taxpayer information
 				table.table
 					thead
 						tr
@@ -28,16 +28,18 @@
 				.clearfix
 				br
 				br
-				h6 Dependent information
+				h4 Dependent information
 				table.table
 					thead
 						tr
+							th #
 							th DOB
 							th Student
 							th Disabled
 							th Live with?
 					tbody
 							tr(ng-repeat="dependent in taxpayer.dependents")
+								td {{ $index + 1 }}
 								td {{ dependent.depDob | date }}
 								td {{ dependent.depStudent | yesNo}}
 								td {{ dependent.depDisabled | yesNo}}
@@ -45,23 +47,25 @@
 				.clearfix
 				br
 				br
-				h6 Income information
+				h4 Income information
 				table.table
 					thead
 						tr
+							th #
 							th Type
 							th Income
 							th fed Tax
 							th St Tax
 					tbody
 							tr(ng-repeat="income in taxpayer.income")
+								td {{ $index + 1 }}
 								td {{ income.inType  }}
 								td {{ income.income | currency }}
 								td {{ income.fdTax | currency }}
 								td {{ income.stTax | currency }}
 				br
 				hr
-				form
+				form(name="newQuoe", enctype="multipart/form-data")
 					.col-sm-8
 						.form-group.label-floating.has-primary
 							label.control-label Enter Quote
@@ -69,7 +73,7 @@
 							span.form-control-feedback
 								i.material-icons attach_money
 					.col-sm-4
-						input.btn.btn-primary.btn-raised(type="submit", value="Send Quote")
+						input.btn.btn-primary.btn-raised(type="submit", value="Send Quote", ng-click="createQuote()")
 
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")

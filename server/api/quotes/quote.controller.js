@@ -7,6 +7,24 @@ var path = require('path');
 var express = require('express');
 
 
+exports.createQuote = function(req, res){
+	console.log(req.body);
+	console.log(req.params.id);
+	var newQuote = new quote();
+	newQuote._tpayer = req.params.id;
+	newQuote.quote = req.body.quoteAmt;
+	newQuote.accepted = false;
+	newQuote.save(function(err, quote){
+		if(err){
+			console.log("Error occured saving quote");
+		}else{
+			console.log("success quote saved");
+			console.log(quote);
+			res.json(quote);
+		}
+	})
+};
+
 exports.acceptedQuotes = function(req, res){
 	quote.find({accepted: true}).exec(function(err, quotes){
 		if(err){

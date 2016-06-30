@@ -26,7 +26,7 @@
 		}
 
 		function createQuote(taxpayer){
-			return $http.post('/app/taxpayer/', taxpayer);
+			return $http.post('/app/taxpayers/' + taxpayer);
 		}
 
 		function getAllPendingQuotes(id){

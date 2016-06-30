@@ -6,7 +6,7 @@ var router = express.Router();
 
 
 
-
+router.post('/app/taxpayers/:id', controller.createQuote);
 router.get('/app/accepted/', controller.acceptedQuotes);
 router.get('/app/accepted/:id', controller.acceptedQuote);
 
