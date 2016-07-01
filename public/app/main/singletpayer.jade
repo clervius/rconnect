@@ -65,11 +65,11 @@
 								td {{ income.stTax | currency }}
 				br
 				hr
-				form(name="newQuoe", enctype="multipart/form-data")
+				form(name="newQuote", enctype="application/json")
 					.col-sm-8
 						.form-group.label-floating.has-primary
 							label.control-label Enter Quote
-							input.form-control
+							input.form-control(ng-model="quoteAmt", name="quoteAmt", id="quoteInput", placeholder="Enter Quote here")
 							span.form-control-feedback
 								i.material-icons attach_money
 					.col-sm-4
