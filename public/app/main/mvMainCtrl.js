@@ -1,15 +1,17 @@
 (function(){
 	'use strict';
 
-	angular.module('app').controller('sideNav', mvMainCtrl);
+	angular.module('app').controller('sideNav', sideNav);
 
-	mvMainCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
+	sideNav.$inject = ['$scope', 'appAPI', '$routeParams', '$route'];
 
-	function mvMainCtrl($scope, appAPI, $routeParams){
+	function sideNav($scope, appAPI, $routeParams, $route){
 
 		$scope.taxpayers = [];	
-		$scope.accepted = [];
-		$scope.pending = [];	
+		$scope.accepteds = [];
+		$scope.pendings = [];	
+		
+		$scope.$route = $route;
 		
 		appAPI.getAlltpayers()
 			.then(function(data){
@@ -22,7 +24,27 @@
 				console.log(err);
 			});
 
+		appAPI.getAllPendingQuotes()
+			.then(function(data){
+				console.log('Pending quotes found');
+				console.log(data);
+				$scope.pendings = data.data;			
+			})
+			.catch(function(err){
+				console.log('failed to get pending quotes');
+				console.log(err);
+			});
 
+		appAPI.getAllAcceptedQuotes()
+			.then(function(data){
+				console.log('Accepted quotes found');
+				console.log(data);
+				$scope.accepteds = data.data;			
+			})
+			.catch(function(err){
+				console.log('failed to get Accepted quotes');
+				console.log(err);
+			});
 	};
 
 
@@ -61,11 +83,11 @@
 (function(){
 	'use strict';
 
-	angular.module('app').controller('mvSingleTPCtrl', mvMainCtrl);
+	angular.module('app').controller('mvSingleTPCtrl', mvSingleTPCtrl);
 
-	mvMainCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
+	mvSingleTPCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
 
-	function mvMainCtrl($scope, appAPI, $routeParams){
+	function mvSingleTPCtrl($scope, appAPI, $routeParams){
 
 		$scope.taxpayer = {};		
 		$scope.formSubmitted = false;

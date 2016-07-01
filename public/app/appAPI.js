@@ -34,7 +34,7 @@
 		}
 
 		function getSinglePendingQuote(quote){
-			return $http.get('/app/quotes/' + quote);
+			return $http.get('/app/quotes/pending/' + quote);
 		}
 
 		function deletePendingQuote(quote){

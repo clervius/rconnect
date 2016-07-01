@@ -1,0 +1,84 @@
+.clearfix.col-md-12(style="margin-bottom:25px")
+	.col-md-9
+		.card.card-nav-tabs
+			.header.header-primary
+				.nav-tabs-navigation
+					.nav-tabs-wrapper
+						ul.nav.nav-tabs
+							li 
+								a 
+									i.material-icons timer
+									| {{ pending._tpayer.city }} taxpayer - Quoted&nbsp;
+									strong {{ pending.quote | currency }}                      	
+			.content
+				h4 Taxpayer information
+				table.table
+					thead
+						tr
+							th Filing Status
+							th DOB
+							th Student
+							th Dependents
+					tbody
+						tr
+							td {{ pending._tpayer.filingStatus }}
+							td {{ pending._tpayer.tpDob | date }}
+							td {{ pending._tpayer.student | yesNo}}
+							td {{ pending._tpayer.numDdep }}
+				.clearfix
+				br
+				br
+				h4 Dependent information
+				table.table
+					thead
+						tr
+							th #
+							th DOB
+							th Student
+							th Disabled
+							th Live with?
+					tbody
+							tr(ng-repeat="dependent in pending._tpayer.dependents")
+								td {{ $index + 1 }}
+								td {{ dependent.depDob | date }}
+								td {{ dependent.depStudent | yesNo}}
+								td {{ dependent.depDisabled | yesNo}}
+								td {{ dependent.depLive | yesNo }}
+				.clearfix
+				br
+				br
+				h4 Income information
+				table.table
+					thead
+						tr
+							th #
+							th Type
+							th Income
+							th fed Tax
+							th St Tax
+					tbody
+							tr(ng-repeat="income in pending._tpayer.income")
+								td {{ $index + 1 }}
+								td {{ income.inType  }}
+								td {{ income.income | currency }}
+								td {{ income.fdTax | currency }}
+								td {{ income.stTax | currency }}
+				.clearfix
+				hr
+				.col-md-4.col-md-offset-8.text-right
+					button.btn.btn-primary.btn-raised
+						i.material-icons delete &nbsp;
+						| Remove
+				.clearfix
+	.col-md-3
+		ul.list-unstyled(style="padding-top:55px")
+			li.text-danger
+				small Quote Submitted
+			li {{ pending.createTime | date }} 
+			hr
+			li.text-danger
+				small 
+					i.material-icons(style="font-size:12px") access_time
+					| &nbsp;&nbsp;Quote Requested
+			li{{ pending._tpayer.date | date }}
+					

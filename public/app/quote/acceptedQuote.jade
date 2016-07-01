@@ -1,0 +1,114 @@
+.clearfix.col-md-12(style="margin-bottom:25px")
+	.col-md-9
+		.card.card-nav-tabs
+			.header.header-primary
+				.nav-tabs-navigation
+					.nav-tabs-wrapper
+						ul.nav.nav-tabs
+							li 
+								a 
+									i.material-icons thumb_up
+									| {{accepted._tpayer.firstName}}&nbsp;{{ accepted._tpayer.lastName}} - &nbsp;
+									strong {{ accepted.quote | currency }}                      	
+			.content
+				
+				table.table
+					thead
+						tr
+							th First Name
+							th Last Name
+							th DOB
+					tbody
+						tr
+							td {{accepted._tpayer.firstName}}
+							td {{ accepted._tpayer.lastName}}
+							td {{ accepted._tpayer.tpDob | date }}
+				.clearfix
+				h4 Contact Information
+				table.table
+					thead
+						tr
+							th Phone Number
+							th Email Address
+							th City
+							th State
+							th Zip
+					tbody
+						tr
+							td {{ accepted._tpayer.pNumber | tel }}
+							td {{ accepted._tpayer.email }}
+							td {{ accepted._tpayer.city }}
+							td {{ accepted._tpayer.state }}
+							td {{ accepted._tpayer.zip }}
+				.clearfix
+				h4 Taxpayer information
+				table.table
+					thead
+						tr
+							th Filing Status
+							th DOB
+							th Student
+							th Dependents
+					tbody
+						tr
+							td {{ accepted._tpayer.filingStatus }}
+							td {{ accepted._tpayer.tpDob | date }}
+							td {{ accepted._tpayer.student | yesNo}}
+							td {{ accepted._tpayer.numDdep }}
+				.clearfix
+				br
+				br
+				h4 Dependent information
+				table.table
+					thead
+						tr
+							th #
+							th DOB
+							th Student
+							th Disabled
+							th Live with?
+					tbody
+							tr(ng-repeat="dependent in accepted._tpayer.dependents")
+								td {{ $index + 1 }}
+								td {{ dependent.depDob | date }}
+								td {{ dependent.depStudent | yesNo}}
+								td {{ dependent.depDisabled | yesNo}}
+								td {{ dependent.depLive | yesNo }}
+				.clearfix
+				br
+				br
+				h4 Income information
+				table.table
+					thead
+						tr
+							th #
+							th Type
+							th Income
+							th fed Tax
+							th St Tax
+					tbody
+							tr(ng-repeat="income in accepted._tpayer.income")
+								td {{ $index + 1 }}
+								td {{ income.inType  }}
+								td {{ income.income | currency }}
+								td {{ income.fdTax | currency }}
+								td {{ income.stTax | currency }}
+				.clearfix
+				hr
+				.col-md-4.col-md-offset-8.text-right
+					button.btn.btn-primary.btn-raised
+						i.material-icons delete &nbsp;
+						| Remove
+				.clearfix
+	.col-md-3
+		ul.list-unstyled(style="padding-top:55px")
+			li.text-danger
+				small Quote Submitted
+			li {{ accepted.createTime | date }} 
+			hr
+			li.text-danger
+				small 
+					i.material-icons(style="font-size:12px") access_time
+					| &nbsp;&nbsp;Quote Requested
+			li{{ accepted._tpayer.date | date }}
+					

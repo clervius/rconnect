@@ -7,11 +7,11 @@
 						ul.nav.nav-tabs
 							li 
 								a 
-									i.material-icons person
-									| #{quote._tpayer.firstName} #{quote._tpayer.lastName} - 
-									strong $ #{quote.quote.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,')}
+									i.material-icons thumb_up
+									| {{ accepted._tpayer.firstName }} {{ accepted._tpayer.lastName}} - 
+									strong {{ accepted.quote | currency }}
 							li.pull-right.text-right
-								a.btn.btn-primary.btn-sm.btn-raised(href="/app/accepted/#{quote._id}") 
+								a.btn.btn-primary.btn-sm.btn-raised(href="/app/accepted/{{ accepted._id}}") 
 									i.material-icons launch
 									|View                        	
 			.content
@@ -26,20 +26,20 @@
 							th Dep.
 					tbody
 						tr
-							td something
-							td something
-							td something
-							td something
-							td something
-							td something	
+							td {{ accepted._tpayer.filingStatus}}
+							td {{ accepted._tpayer.income[0].income + accepted._tpayer.income[1].income + accepted._tpayer.income[2].income + accepted._tpayer.income[3].income | currency}}
+							td {{ accepted._tpayer.income[0].fdTax + accepted._tpayer.income[1].fdTax + accepted._tpayer.income[2].fdTax + accepted._tpayer.income[3].fdTax | currency }}
+							td {{ accepted._tpayer.income[0].stTax + accepted._tpayer.income[1].stTax + accepted._tpayer.income[2].stTax + accepted._tpayer.income[3].stTax | currency }}
+							td {{ accepted._tpayer.student | yesNo}}
+							td {{ accepted._tpayer.numDdep }}	
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
 			li.text-danger
 				small Created
-			li #{quote.createTime.toDateString()} 
+			li {{ accepted.createTime | date }}
 			hr
 			li.text-danger
 				small 
 					i.material-icons(style="font-size:12px") access_time
 					| &nbsp;&nbsp;Elapsed
-s			li 1 day, 2:00
+			li 1 day, 2:00

@@ -1,20 +1,20 @@
 .col-md-3(ng-controller="sideNav")
 	ul.list-unstyled(id="mainNav", data-spy="affix", data-offset-top="250")
 		li
-			a.btn.btn-raised.btn-primary(href="/app/")
+			a.btn(href="/app/", ng-class="{'btn-raised btn-primary': $route.current.tab == 'home'}")
 				i.material-icons supervisor_account
 				| &nbsp;&nbsp;&nbsp; TAXPAYERS
 				span.pull-right {{ taxpayers.length }}
 				.ripple-container
 		li
-			a.btn(href="/app/accepted/")
+			a.btn(href="/app/accepted/", ng-class="{'btn-raised btn-primary': $route.current.tab == 'accepteds'}")
 				i.material-icons thumb_up
 				| &nbsp;&nbsp;&nbsp; ACCEPTED
-				span.pull-right 01
+				span.pull-right {{ accepteds.length }}
 				.ripple-container
 		li
-			a.btn(href="/app/pending/") 
+			a.btn(href="/app/pending/", ng-class="{'btn-raised btn-primary': $route.current.tab == 'pendings'}") 
 				i.material-icons timer
 				| &nbsp;&nbsp;&nbsp; PENDING
-				span.pull-right 7
+				span.pull-right {{ pendings.length }}
 				.ripple-container

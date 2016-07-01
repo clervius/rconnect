@@ -1,11 +1,11 @@
 (function(){
 	'use strict';
 
-	angular.module('app').controller('mvQuotesCtrl', mvMainCtrl);
+	angular.module('app').controller('mvQuotesCtrl', mvQuotesCtrl);
 
-	mvMainCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
+	mvQuotesCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
 
-	function mvMainCtrl($scope, appAPI, $routeParams){
+	function mvQuotesCtrl($scope, appAPI, $routeParams){
 
 		$scope.pendings = [];		
 		
@@ -29,11 +29,11 @@
 (function(){
 	'use strict';
 
-	angular.module('app').controller('mvQuoteCtrl', mvMainCtrl);
+	angular.module('app').controller('mvQuoteCtrl', mvQuoteCtrl);
 
-	mvMainCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
+	mvQuoteCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
 
-	function mvMainCtrl($scope, appAPI, $routeParams){
+	function mvQuoteCtrl($scope, appAPI, $routeParams){
 
 		$scope.pending = {};		
 		
@@ -56,11 +56,11 @@
 (function(){
 	'use strict';
 
-	angular.module('app').controller('mvAcceptedsCtrl', mvMainCtrl);
+	angular.module('app').controller('mvAcceptedsCtrl', mvAcceptedsCtrl);
 
-	mvMainCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
+	mvAcceptedsCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
 
-	function mvMainCtrl($scope, appAPI, $routeParams){
+	function mvAcceptedsCtrl($scope, appAPI, $routeParams){
 
 		$scope.accepteds = [];		
 		
@@ -84,11 +84,11 @@
 (function(){
 	'use strict';
 
-	angular.module('app').controller('mvAcceptedCtrl', mvMainCtrl);
+	angular.module('app').controller('mvAcceptedCtrl', mvAcceptedCtrl);
 
-	mvMainCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
+	mvAcceptedCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
 
-	function mvMainCtrl($scope, appAPI, $routeParams){
+	function mvAcceptedCtrl($scope, appAPI, $routeParams){
 
 		$scope.accepted = {};		
 		
