@@ -13,6 +13,22 @@
 	        	templateUrl: '../partials/app/main/singletpayer',
 	        	controller: 'mvSingleTPCtrl'
 	        })
+	        .when('/app/pending/', {
+	        	templateUrl: '../partials/app/main/pendingQuotes',
+	        	controller: 'mvQuotesCtrl'
+	        })
+	        .when('/app/pending/:id', {
+	        	templateUrl: '../partials/app/main/pendingQuote',
+	        	controller: 'mvQuoteCtrl'
+	        })
+	        .when('/app/accepted/', {
+	        	templateUrl: '../partials/app/main/acceptedQuotes',
+	        	controller: 'mvAcceptedsCtrl'
+	        })
+	        .when('/app/accepted/:id', {
+	        	templateUrl: '../partials/app/main/acceptedQuote',
+	        	controller: 'mvAcceptedCtrl'
+	        });
 	});
 
 	angular.module('app').filter('agi', function(){

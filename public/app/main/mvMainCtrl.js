@@ -68,7 +68,7 @@
 	function mvMainCtrl($scope, appAPI, $routeParams){
 
 		$scope.taxpayer = {};		
-		
+		$scope.formSubmitted = false;
 		appAPI.getSingletpayer($routeParams.id)
 			.then(function(data){
 				console.log('single taxpayer found');
@@ -81,11 +81,15 @@
 			});
 
 		$scope.createQuote = function(){
-			var tpayer = $scope.taxpayer._id;
+			var thisQuote = {
+				quoteAmt: $scope.quoteAmt,
+				tpayer: $scope.taxpayer._id
+			}	
 
-			appAPI.createQuote(tpayer).then(function(data){
+			appAPI.createQuote(thisQuote).then(function(data){
 				console.log('Created Quote');
 				console.log(data);
+				$scope.formSubmitted = true;
 			}).catch(function(err){
 				console.log('didnt create quote');
 				console.log(err);

@@ -25,28 +25,28 @@
 			return $http.get('/app/taxpayers/' + taxpayer)
 		}
 
-		function createQuote(taxpayer){
-			return $http.post('/app/taxpayers/' + taxpayer);
+		function createQuote(thisQuote){
+			return $http.post('/app/taxpayers/', thisQuote);
 		}
 
-		function getAllPendingQuotes(id){
-			return $http.get('/app/quotes/?accepted=false&user=' + id);
+		function getAllPendingQuotes(){
+			return $http.get('/app/quotes/pending/');
 		}
 
 		function getSinglePendingQuote(quote){
-			return $http.get('/app/quotes/' + quote._id);
+			return $http.get('/app/quotes/' + quote);
 		}
 
 		function deletePendingQuote(quote){
-			return $http.delete('/app/quotes/' + quote._id);
+			return $http.delete('/app/quotes/' + quote);
 		}
 
-		function getAllAcceptedQuotes(id){
-			return $http.get('/app/quotes/?accepted=true&user=' + id);
+		function getAllAcceptedQuotes(){
+			return $http.get('/app/quotes/accepted/');
 		}
 
 		function getSingleAcceptedQuote(quote){
-			return $http.get('/app/quotes/' + quote._id);
+			return $http.get('/app/quotes/accepted/' + quote);
 		}
 	};
 })();

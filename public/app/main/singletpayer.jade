@@ -65,15 +65,25 @@
 								td {{ income.stTax | currency }}
 				br
 				hr
-				form(name="newQuote", enctype="application/json")
+				.alert.alert-primary(ng-show="formSubmitted")
+					.alert-icon
+						i.material-icons done
+					button.close(type="button", data-dismiss="alert", aria-label="Close")
+						span(aria-hidden="true")
+							i.material-icons clear
+					b Quote Submitted:&nbsp;&nbsp;
+					| A record of this quote will be kept in your&nbsp;
+					strong Pending Quotes&nbsp;
+					| section until the taxpayer has accepted.
+				form(name="newQuote", ng-submit="createQuote()", ng-hide="formSubmitted")
 					.col-sm-8
 						.form-group.label-floating.has-primary
 							label.control-label Enter Quote
-							input.form-control(ng-model="quoteAmt", name="quoteAmt", id="quoteInput", placeholder="Enter Quote here")
+							input.form-control(ng-model="quoteAmt", name="quoteAmt", id="quoteAmt", placeholder="$")
 							span.form-control-feedback
 								i.material-icons attach_money
 					.col-sm-4
-						input.btn.btn-primary.btn-raised(type="submit", value="Send Quote", ng-click="createQuote()")
+						input.btn.btn-primary.btn-raised(type="submit", value="Send Quote")
 
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
