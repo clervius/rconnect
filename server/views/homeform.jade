@@ -1,0 +1,14 @@
+doctype
+html(lang="en")
+    head
+        title Reconnect App
+        include head
+    body(ng-app="app")
+        include ../../public/app/header/header
+        section.wrapper(id="mainBody")
+            .container
+                .row
+                    include ../../public/app/sidenav/sidenav
+                    .col-md-9(ng-view)
+        block footer
+        include ../../public/app/footer/appscripts
