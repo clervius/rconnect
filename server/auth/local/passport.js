@@ -1,8 +1,8 @@
 var passport = require('passport');
-	localStrategy = require('passport-local').Strategy;
+var	localStrategy = require('passport-local').Strategy;
 
 exports.setup = function(User, config){
-	passport.use(new LocalStrategy({
+	passport.use(new localStrategy({
 			usernameField: 'email',
 			passwordField: 'password'
 		},

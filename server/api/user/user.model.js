@@ -5,7 +5,12 @@ var Schema = mongoose.Schema;
 var crypto = require('crypto');
 
 var userSchema = new Schema({
-	name: String,
+	fname: String,
+	lname: String,
+	sAddress: String,
+	city: String,
+	state: String,
+	zip: Number,
 	email: {
 		type: String,
 		lowercase: true
@@ -24,7 +29,7 @@ var userSchema = new Schema({
 	salt: String
 }, {
 	toJSON: { virtuals: true}
-};
+});
 /*
 * Virtuals 
 */
@@ -69,7 +74,7 @@ userSchema
 				if(self.id === user.id){
 					return respond(true);
 				}
-				reurn respond(false);
+				return respond(false);
 			}
 			respond(true);
 		});

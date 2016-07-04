@@ -5,6 +5,10 @@
 	    $locationProvider.html5Mode(true);
 
 	    $routeProvider
+	    	.when('/access/signup', {
+	    		templateUrl: '../partials/app/home/signup',
+	    		controller: 'SignupCtrl'
+	    	})
 	        .when('/app/', {
 	            templateUrl: '../partials/app/main/main',
 	            controller: 'mvMainCtrl',

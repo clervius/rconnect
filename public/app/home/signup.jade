@@ -1,0 +1,80 @@
+.col-md-6.col-md-offset-3.col-sm6.col-sm-offset-3
+	.card.card-signup
+		.header.header-primary.text-center
+			h4 Sign up for an account
+		p.text-divider Registration 
+		.content(style="padding:0 40px")
+			form(name="form", ng-submit="register(form)" novalidate)
+				.row
+					.col-sm-6
+						.form-group.label-floating.is-empty
+							label.control-label First Name
+							input.form-control(ng-model="fname", name="fname", id="fname")
+					.col-sm-6
+						.form-group.label-floating.is-empty
+							label.control-label Last Name
+							input.form-control(ng-model="lname", name="lname", id="lname")
+				.row
+					.col-sm-6
+						.form-group.label-floating.is-empty
+							label.control-label Email Address
+							input.form-control(ng-model="email", name="email", id="email", type="email")
+					.col-sm-6
+						.form-group.label-floating.is-empty
+							label.control-label Phone Number (cell)
+							input.form-control(ng-model="phoneNumber", name="phoneNumber", id="phoneNumber")
+				.row
+					.col-sm-6
+						.form-group.label-floating.is-empty
+							label.control-label Password
+							input.form-control(ng-model="password", name="password", id="password", type="password")
+					.col-sm-6
+						.form-group.label-floating.is-empty
+							label.control-label Confirm Password
+							input.form-control(ng-model="cpassword", name="cpassword", id="cpassword", type="password")
+				br
+				br
+				.row
+					.col-sm-12						
+						.form-group.label-floating.is-empty
+							label.control-label Billing Street Address
+							input.form-control(ng-model="sAddress", name="sAddress", id="sAddress")
+				.row
+					.col-sm-5
+						.form-group.label-floating.is-empty
+							label.control-label City
+							input.form-control(ng-model="city", name="city", id="city")
+					.col-sm-3
+						.form-group.label-floating.is-empty
+							label.control-label State
+							input.form-control(ng-model="state", name="state", id="state")
+					.col-sm-4
+						.form-group.label-floating.is-empty
+							label.control-label Zip
+							input.form-control(ng-model="zip", name="zip", id="zip")
+				br
+				br
+				.row
+					.col-md-12
+						.form-group.label-floating.is-empty
+							label.control-label Credit Card Number
+							input.form-control(ng-model="number", name="number", id="number")
+				.row
+					.col-md-6
+						.form-group.label-floating.is-empty.col-sm-6
+							label.control-label Month
+							input.form-control(ng-model="exp_month", name="exp_month", id="exp_month")
+						.form-group.label-floating.is-empty.col-sm-6
+							label.control-label Year
+							input.form-control(ng-model="exp_year", name="exp_year", id="exp_year")
+					.col-md-6
+						.form-group.label-floating.is-empty
+							label.control-label CVC
+							input.form-control(ng-model="cvc", name="cvc", id="cvc")
+				br
+				br
+				.row
+					.col-md-12.text-right
+						input.btn.btn-primary(value="Register", type="submit")
+				.clearfix
+				br

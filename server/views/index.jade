@@ -1,9 +1,29 @@
 doctype
 html
 	head
-		title Advent Reconnect
-	body
-		h1 Here will be Advent Reconnect
-		a(href="/app/") Go to Application
-		
+		title Start page
+		include ../includes/head
+	body.signup-page
+		include ../includes/mainNav
+		.wrapper
+			.header.header-filter(style="background-image: url('img/city.jpg');background-size: cover; background-position: top center;")
+				.container
+					.row
+						.col-md-4.col-md-offset-4.col-sm6.col-sm-offset-3
+							.card.card-signup
+								.header.header-primary.text-center
+									h4 Reconnect
+								p.text-divider Advent Financial Corp
+								.content
+									p 
+										a(href="/app/") &raquo;&nbsp;Go to Application
+									hr
+									ul
+										li 
+											a(href="/access/signup") Sign up
+										li
+											a(href="/access/login") Log In
+									br
+				include ../includes/footer
+		include ../../public/app/footer/appscripts
 				

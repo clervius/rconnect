@@ -37,7 +37,7 @@ exports.destroy = function(req, res){
 	});
 };
 // Change a user's password
-esports.changePassword = function(req, res, next){
+exports.changePassword = function(req, res, next){
 	var userId = req.user._id;
 	var oldPass = String(req.body.oldPassword);
 	var newPass = String(req.body.newPassword);

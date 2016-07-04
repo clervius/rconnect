@@ -1,20 +1,8 @@
 doctype
 html(lang="en")
     head
-        base(href="/")
-        meta(charset="utf-8")
-        meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-        meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport')
-        
         title Reconnect App
-        link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")        
-        link(href="https://fonts.googleapis.com/icon?family=Material+Icons", rel="stylesheet")
-        link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700", rel="stylesheet")
-        link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css", rel="stylesheet")
-        link(href="/vendor/toastr/toastr.css", rel="stylesheet", type="text/css")
-        link(href="/vendor/bootstrap/dist/css/bootstrap.css", rel="stylesheet", type="text/css")
-        link(href="/vendor/bootstrap/dist/css/material-kit.css", rel="stylesheet", type="text/css")
-        link(href="/css/site.css", rel="stylesheet", type="text/css")
+        include head
     body(ng-app="app")
         include ../../public/app/header/header
         section.wrapper(id="mainBody")
