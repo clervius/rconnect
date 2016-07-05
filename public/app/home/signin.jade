@@ -1,0 +1,22 @@
+.col-md-4.col-md-offset-4.col-sm6.col-sm-offset-3
+	.card.card-signup
+		.header.header-primary.text-center
+			h4 Log In
+		p.text-divider Access Reconnect 
+		.content(style="padding:0 40px")
+			form
+				.input-group
+					span.input-group-addon
+						i.material-icons email
+					input.form-control(placeholder="Email...")
+				.input-group
+					span.input-group-addon
+						i.material-icons lock_outline
+					input.form-control(type="password", placeholder="Password...")
+				.clearfix
+				br
+				br
+				.input-group.text-right.col-sm-12
+					input.btn.btn-primary.btn-raised(value="Log In")
+		.footer.text-right
+			a.btn.btn-primary.btn-wd.btn-lg(ng-redirect-to="/app/") Access App &nbsp;&nbsp;

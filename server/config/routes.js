@@ -8,13 +8,17 @@ module.exports = function(app){
 	
 	
 	// Main
-	app.get('/access/*', function(req, res){
-		res.render('homeform');
-	});
 	app.get('/app/', function(req, res){
 		res.render('app');
 	});
-
+	app.get('/access/*', function(req, res){
+		res.render('homeform');
+	});
+	
+	app.post('/access/register', passport.authenticate('local-signup', {
+		successRedirect: '/app/',
+		failureRedirect: '/'
+	}))
 
 	// Angular routes
 	app.get('/app/taxpayers/*', require('../api/taxpayer'));
@@ -34,4 +38,12 @@ module.exports = function(app){
 		res.render('index');		
 	});
 
+}
+
+function iLoggedIn(req, res, next){
+	if(req.isAuthenticated()){
+		return next();
+	} else{
+		res.redirect('/access/signup')
+	}
 }

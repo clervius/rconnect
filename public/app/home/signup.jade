@@ -4,7 +4,7 @@
 			h4 Sign up for an account
 		p.text-divider Registration 
 		.content(style="padding:0 40px")
-			form(name="form", ng-submit="register(form)" novalidate)
+			form(name="form", ng-submit="register(form)" novalidate, action="/access/register" method="post")
 				.row
 					.col-sm-6
 						.form-group.label-floating.is-empty

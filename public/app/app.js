@@ -7,7 +7,11 @@
 	    $routeProvider
 	    	.when('/access/signup', {
 	    		templateUrl: '../partials/app/home/signup',
-	    		controller: 'SignupCtrl'
+	    		//controller: 'SignupCtrl'
+	    	})
+	    	.when('/access/signin', {
+	    		templateUrl: '../partials/app/home/signin',
+	    		//controller: 'SigninCtrl'
 	    	})
 	        .when('/app/', {
 	            templateUrl: '../partials/app/main/main',
@@ -101,4 +105,26 @@
 	        return (country + " (" + city + ") " + number).trim();
 	    };
 	});
+
+
+(function(){
+    'use strict';
+
+    function ngRedirectTo($window) {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attributes) {
+                element.bind('click', function (event) {
+                    //assign ng-Redirect-To attribute value to location
+                    $window.location.href = attributes.ngRedirectTo;
+                });
+            }
+        };
+    }
+    angular.module('app').directive('ngRedirectTo', ngRedirectTo);
+    //inject $window service for redirection
+    redirectTo.$inject = ['$window'];
+}());
+
+
 

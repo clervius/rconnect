@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var crypto = require('crypto');
+var crypto = require('bcrypt-nodejs');
 
 var userSchema = new Schema({
 	fname: String,
@@ -24,31 +24,29 @@ var userSchema = new Schema({
 		type: String,
 		default: 'user'
 	},
-	hashedPassword: String,
-	provider: String,
+	password: String,
 	salt: String
 }, {
 	toJSON: { virtuals: true}
 });
-/*
-* Virtuals 
-*/
-userSchema
-	.virtual('password')
-	.set(function(password){
-		this._password = password;
-		this.salt = this.makeSalt();
-		this.hashedPassword = this.encryptPassword(password);
-	})
-	.get(function(){
-		return this._password;
-	});
+
+userSchema.methods.generateHash = function(password){
+	return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
+};
+
+userSchema.methods.validPassword = function(password){
+	return bcrypt.compareSync(password, this.password);
+};
 // Public profile information
 userSchema
 	.virtual('profile')
 	.get(function(){
 		return {
-			'name': this.name,
+			'fname': this.fname,
+			'lname': this.lname,
+			'email': this.email,
+			'city': this.city,
+			'zip': this.zip,
 			'role': this.role
 		}
 	});
@@ -61,62 +59,14 @@ userSchema
 			'role': this.role
 		}
 	});
-// validate email is not taken
-userSchema
-	.path('email')
-	.validate(function(value, respond){
-		var self = this;
-		this.constructor.findOne({
-			email: value
-		}, function(err, user){
-			if(err){throw err}
-			if(user){
-				if(self.id === user.id){
-					return respond(true);
-				}
-				return respond(false);
-			}
-			respond(true);
-		});
-	}, 'The specified email address is already in use.');
 
-var validatePresenceOf = function(value){
-	return value && value.length;
-};
+
+/*
 var autoPopulateUser = function(next){
 	this.populate('_subscription');
 	next();
-}
+}*/
 
-userSchema.methods = {
-	authenticate: function(plainText){
-		return this.encryptPassword(plainText) === this.hashedPassword;
-	},
-	makeSalt: function(){
-		return crypto.randomBytes(16).toString('base64');
-	},
-	encryptPassword: function(password){
-		if(!password || !this.salt){ return '';}
-		var salt = new Buffer(this.salt, 'base64');
-		return crypto.pbkdf2Sync(password, salt, 10000, 64).toString('base64');
-	}
-},
-
-
-
-userSchema
-	.pre('save', function(next){
-		if(!this.isNew){return next();}
-		if(!validatePresenceOf(this.hashedPassword) && authTypes.indexOf(this.provider) === -1){
-			next(new Error('Invalid password'))
-		}
-		else{ next();}
-	});
-
-
-
-
-
-userSchema.pre('findOne', autoPopulateUser).pre('find', autoPopulateUser);
+// userSchema.pre('findOne', autoPopulateUser).pre('find', autoPopulateUser);
 
 module.exports = mongoose.model('user', userSchema);
