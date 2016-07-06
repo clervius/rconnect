@@ -14,6 +14,7 @@ exports.createQuote = function(req, res){
 	newQuote._tpayer = req.body.tpayer;
 	newQuote.quote = req.body.quoteAmt;
 	newQuote.accepted = false;
+	newQuote._creator = req.body.creator;
 	newQuote.save(function(err, quote){
 		if(err){
 			console.log("Error occured saving quote");

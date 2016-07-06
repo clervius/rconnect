@@ -91,6 +91,9 @@
 
 		$scope.taxpayer = {};		
 		$scope.formSubmitted = false;
+		//sessionStorage.user = JSON.stringify($scope.user);
+		//$scope.user = JSON.parse(sessionStorage.user);
+
 		appAPI.getSingletpayer($routeParams.id)
 			.then(function(data){
 				console.log('single taxpayer found');
@@ -105,7 +108,8 @@
 		$scope.createQuote = function(){
 			var thisQuote = {
 				quoteAmt: $scope.quoteAmt,
-				tpayer: $scope.taxpayer._id
+				tpayer: $scope.taxpayer._id,
+				creator: $scope.user
 			}	
 
 			appAPI.createQuote(thisQuote).then(function(data){

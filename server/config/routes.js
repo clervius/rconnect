@@ -10,6 +10,8 @@ module.exports = function(app){
 	// Main
 	app.get('/app/', isLoggedIn, function(req, res){
 		res.render('app', {user: req.user});
+		//res.json(req.user);
+		console.log(req.user)
 	});
 	app.get('/access/*', function(req, res){
 		res.render('homeform');

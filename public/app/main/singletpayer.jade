@@ -58,7 +58,7 @@
 							th St Tax
 					tbody
 							tr(ng-repeat="income in taxpayer.income")
-								td {{ $index + 1 }}
+								td {{ $index + 1 }} 
 								td {{ income.inType  }}
 								td {{ income.income | currency }}
 								td {{ income.fdTax | currency }}

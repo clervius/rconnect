@@ -3,7 +3,7 @@ html(lang="en")
     head
         title Reconnect App
         include head
-    body(ng-app="app")
+    body(ng-app="app", ng-init='user = "'+user._id+'"')  
         include ../../public/app/header/header
         section.wrapper(id="mainBody")
             .container

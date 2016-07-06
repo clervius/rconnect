@@ -103,7 +103,7 @@ module.exports = function(passport) {
         usernameField : 'email',
         passwordField : 'password',
         passReqToCallback : true,
-        passResToCallback: true // allows us to pass back the entire request to the callback
+        //passResToCallback: true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) { // callback with email and password from our form
 

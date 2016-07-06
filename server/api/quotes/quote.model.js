@@ -7,11 +7,11 @@ var quoteSchema = new Schema({
 	_tpayer : {
 		type: Schema.ObjectId,
 		ref: 'taxpayer'
-	},/*
+	},
 	_creator: {
 		type: Schema.ObjectId,
 		ref: 'user'
-	},*/
+	},
 	quote: Number,
 	accepted: Boolean,
 	createTime: {
@@ -24,7 +24,7 @@ var quoteSchema = new Schema({
 
 var autoPopulateQuote = function(next){
 	this.populate('_tpayer');
-	///this.populate('_creator');
+	this.populate('_creator');
 	next();
 };
 
