@@ -8,8 +8,8 @@ module.exports = function(app){
 	
 	
 	// Main
-	app.get('/app/', function(req, res){
-		res.render('app');
+	app.get('/app/', isLoggedIn, function(req, res){
+		res.render('app', {user: req.user});
 	});
 	app.get('/access/*', function(req, res){
 		res.render('homeform');
@@ -18,7 +18,11 @@ module.exports = function(app){
 	app.post('/access/register', passport.authenticate('local-signup', {
 		successRedirect: '/app/',
 		failureRedirect: '/'
-	}))
+	}));
+	app.post('/access/login', passport.authenticate('local-login', {
+		successRedirect: '/app/',
+		failureRedirect: '/'
+	}));
 
 	// Angular routes
 	app.get('/app/taxpayers/*', require('../api/taxpayer'));
@@ -40,7 +44,7 @@ module.exports = function(app){
 
 }
 
-function iLoggedIn(req, res, next){
+function isLoggedIn(req, res, next){
 	if(req.isAuthenticated()){
 		return next();
 	} else{

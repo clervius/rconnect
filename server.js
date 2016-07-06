@@ -15,7 +15,10 @@ require('./server/config/express')(app, config);
 require('./server/config/mongoose')(config);
 // routes
 require('./server/config/passport')(passport);
-app.use(session({secret: "adventfinancialcorp"}));
+app.use(session({
+	secret: "adventfinancialcorp",
+	resave: true,
+    saveUninitialized: true}));
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -4,19 +4,19 @@
 			h4 Log In
 		p.text-divider Access Reconnect 
 		.content(style="padding:0 40px")
-			form
+			form(name="signin", novalidate, action="/access/login" method="post")
 				.input-group
 					span.input-group-addon
 						i.material-icons email
-					input.form-control(placeholder="Email...")
+					input.form-control(placeholder="Email...", name="email", id="email")
 				.input-group
 					span.input-group-addon
 						i.material-icons lock_outline
-					input.form-control(type="password", placeholder="Password...")
+					input.form-control(type="password", placeholder="Password...", name="password", id="password")
 				.clearfix
 				br
 				br
 				.input-group.text-right.col-sm-12
-					input.btn.btn-primary.btn-raised(value="Log In")
+					input.btn.btn-primary.btn-raised(value="Log In", type="submit")
 		.footer.text-right
 			a.btn.btn-primary.btn-wd.btn-lg(ng-redirect-to="/app/") Access App &nbsp;&nbsp;

@@ -123,7 +123,7 @@
     }
     angular.module('app').directive('ngRedirectTo', ngRedirectTo);
     //inject $window service for redirection
-    redirectTo.$inject = ['$window'];
+    ngRedirectTo.$inject = ['$window'];
 }());
 
 
