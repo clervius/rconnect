@@ -1,7 +1,7 @@
 doctype
 html
 	head
-		title Start page
+		title Login to My Office
 		include ../includes/head
 	body.signup-page
 		include ../includes/mainNav
@@ -23,12 +23,23 @@ html
 											|, &nbsp;
 											strong Secure GFS
 									hr
-									ul
-										li 
-											a(href="/access/signup") Sign up
+									ul.list-unstyled
 										li
-											a(href="/access/signin") Log In
-									br
+											a.btn.btn-primary.btn-raised(href="/access/signin") 
+												i.fa.fa-lock
+												| &nbsp;&nbsp;Log In
+										li 
+											a.btn.btn-primary.btn-raised(href="/access/signup") 
+												i.fa.fa-pencil
+												| &nbsp;&nbsp;Sign up										
+									div.clearfix
+									hr
+									ul.list-unstyled
+										li
+											a.btn.btn-primary(href="http://adventtax.pro") 
+												i.fa.fa-arrow-left 
+												| &nbsp;&nbsp;Back to Website
+
 				include ../includes/footer
 		include ../../public/app/footer/appscripts
 				
