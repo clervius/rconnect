@@ -7,8 +7,8 @@ var router = express.Router();
 
 
 
-router.get('/app/taxpayers/', controller.newTaxpayers);
-router.get('/app/taxpayers/:id', controller.singleTaxpayer);
+router.get('/connect/taxpayers/', controller.newTaxpayers);
+router.get('/connect/taxpayers/:id', controller.singleTaxpayer);
 
 
 module.exports = router;

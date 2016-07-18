@@ -13,32 +13,32 @@
 	    		templateUrl: '../partials/app/home/signin',
 	    		//controller: 'SigninCtrl'
 	    	})
-	        .when('/app/', {
+	        .when('/connect/', {
 	            templateUrl: '../partials/app/main/main',
 	            controller: 'mvMainCtrl',
 	            tab: 'home'
 	        })
-	        .when('/app/tpayer/:id', {
+	        .when('/connect/tpayer/:id', {
 	        	templateUrl: '../partials/app/main/singletpayer',
 	        	controller: 'mvSingleTPCtrl',
 	        	tab: 'home'
 	        })
-	        .when('/app/pending/', {
+	        .when('/connect/pending/', {
 	        	templateUrl: '../partials/app/quote/pendingQuotes',
 	        	controller: 'mvQuotesCtrl',
 	        	tab: 'pendings'
 	        })
-	        .when('/app/pending/:id', {
+	        .when('/connect/pending/:id', {
 	        	templateUrl: '../partials/app/quote/pendingQuote',
 	        	controller: 'mvQuoteCtrl',
 	        	tab: 'pendings'
 	        })
-	        .when('/app/accepted/', {
+	        .when('/connect/accepted/', {
 	        	templateUrl: '../partials/app/quote/acceptedQuotes',
 	        	controller: 'mvAcceptedsCtrl',
 	        	tab: 'accepteds'
 	        })
-	        .when('/app/accepted/:id', {
+	        .when('/connect/accepted/:id', {
 	        	templateUrl: '../partials/app/quote/acceptedQuote',
 	        	controller: 'mvAcceptedCtrl',
 	        	tab: 'accepteds'

@@ -2,12 +2,17 @@ nav.navbar.navbar-primary.navbar-fixed-top
 		.container
 			.row
 				.col-md-3
-					a(href="/app/", id="logoLink") 
-						img(src="/img/logo_white.png", id="headerLogo")
+					a(href="/", id="logoLink") 
+						img(src="/img/logo_white.png", id="headerLogo" style="position:relative;top:10px")
 				.col-md-9
-					ul.nav.navbar-nav.nav-tabs.col-md-9
+					ul.nav.navbar-nav.nav-tabs.navbar-left
 						li(style="margin-left:10px")
-							a.btn.btn-info(href="") Secure Portal
+							a.btn.btn-info(href="/office/") My Office
+						li(style="margin-left:10px")
+							a.btn.btn-info(href="/connect/") A.Connect
+						li
+							a.btn.btn-info(href="/gfs/") Secure GFS
+
 					ul.nav.navbar-nav.navbar-right.nav-tabs
 						li.dropdown
 							a.btn.dropdown-toggle(id="loginLink", data-toggle="dropdown", ara-expanded="false") #{ user.fname } &nbsp;&nbsp;
@@ -25,6 +30,6 @@ nav.navbar.navbar-primary.navbar-fixed-top
 										| Notifications
 								li.divider
 								li
-									a(href="/app/logout") 
+									a(href="/logout") 
 										i.material-icons exit_to_app
 										| Logout

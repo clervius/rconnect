@@ -8,8 +8,8 @@ module.exports = function(app){
 	
 	
 	// Main
-	app.get('/app/', isLoggedIn, function(req, res){
-		res.render('app', {user: req.user});
+	app.get('/connect/', isLoggedIn, function(req, res){
+		res.render('connect', {user: req.user, title: "Advent Connect"});
 		//res.json(req.user);
 		console.log(req.user)
 	});
@@ -18,18 +18,18 @@ module.exports = function(app){
 	});
 	
 	app.post('/access/register', passport.authenticate('local-signup', {
-		successRedirect: '/app/',
+		successRedirect: '/connect/',
 		failureRedirect: '/'
 	}));
 	app.post('/access/login', passport.authenticate('local-login', {
-		successRedirect: '/app/',
+		successRedirect: '/connect/',
 		failureRedirect: '/'
 	}));
 
 	// Angular routes
-	app.get('/app/taxpayers/*', require('../api/taxpayer'));
-	app.post('/app/taxpayers/*', require('../api/quotes'));
-	app.get('/app/quotes/*', require('../api/quotes'));
+	app.get('/connect/taxpayers/*', require('../api/connect/taxpayer'));
+	app.post('/connect/taxpayers/*', require('../api/connect/quotes'));
+	app.get('/connect/quotes/*', require('../api/connect/quotes'));
 	app.get('/app/user/', require('../api/user'));
 	app.use('/auth', require('../auth'));
 	//app.get('/app/users/*', require('../api/user'));
@@ -43,6 +43,11 @@ module.exports = function(app){
 	app.get('*', function(req, res){
 		res.render('index');		
 	});
+
+	app.get('/logout', function(req, res){
+		req.logout();
+		res.redirect('/');
+	})
 
 }
 

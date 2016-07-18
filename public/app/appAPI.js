@@ -18,35 +18,35 @@
 		});
 
 		function getAlltpayers() {
-			return $http.get('/app/taxpayers/');
+			return $http.get('/connect/taxpayers/');
 		}
 
 		function getSingletpayer(taxpayer){
-			return $http.get('/app/taxpayers/' + taxpayer)
+			return $http.get('/connect/taxpayers/' + taxpayer)
 		}
 
 		function createQuote(thisQuote){
-			return $http.post('/app/taxpayers/', thisQuote);
+			return $http.post('/connect/taxpayers/', thisQuote);
 		}
 
 		function getAllPendingQuotes(){
-			return $http.get('/app/quotes/pending/');
+			return $http.get('/connect/quotes/pending/');
 		}
 
 		function getSinglePendingQuote(quote){
-			return $http.get('/app/quotes/pending/' + quote);
+			return $http.get('/connect/quotes/pending/' + quote);
 		}
 
 		function deletePendingQuote(quote){
-			return $http.delete('/app/quotes/' + quote);
+			return $http.delete('/connect/quotes/' + quote);
 		}
 
 		function getAllAcceptedQuotes(){
-			return $http.get('/app/quotes/accepted/');
+			return $http.get('/connect/quotes/accepted/');
 		}
 
 		function getSingleAcceptedQuote(quote){
-			return $http.get('/app/quotes/accepted/' + quote);
+			return $http.get('/connect/quotes/accepted/' + quote);
 		}
 	};
 })();
