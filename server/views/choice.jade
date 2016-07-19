@@ -1,0 +1,64 @@
+doctype
+html(lang="en")
+    head
+        title Advent Software
+        include ../includes/head
+    body
+        include ../../public/app/header/header
+        section.wrapper(id="mainBody")
+            .container
+                .row
+                    .col-md-8
+                        h2.title Welcome back #{user.fname}!
+
+                .row
+                   .col-md-4
+                        .card
+                            .content.content-primary
+                                h5.category-social 
+                                    i.fa.fa-area-chart
+                                    | My Office
+                                h4.card-title
+                                    a(href="/office/") Your Office Backend
+                                p.card-description Area to manage all the files, settings, and resources relating to your office.
+                                .checkbox
+                                        label
+                                            input(type="checkbox", name="connectAlways")
+                                            span.checkbox-material
+                                            | Login directly to My Office                                           
+                                .footer.text-right
+                                    
+                                    a.btn.btn-white.btn-round(href="/connect/") Launch
+                    .col-md-4
+                        .card
+                            .content.content-primary
+                                h5.category-social 
+                                    i.fa.fa-newspaper-o
+                                    | A. Connect
+                                h4.card-title
+                                    a(href="/connect/") Premium Quote Leads
+                                p.card-description Access to a real-time stream of taxpayers who are looking for tax professionals just like you.
+                                .checkbox
+                                        label
+                                            input(type="checkbox", name="connectAlways")
+                                            span.checkbox-material
+                                            | Login directly to A.Connect
+                                .footer.text-right
+                                    a.btn.btn-white.btn-round(href="/connect/") Launch
+                    .col-md-4
+                        .card
+                            .content.content-primary
+                                h5.category-social 
+                                    i.fa.fa-archive
+                                    | Secure GFS
+                                h4.card-title
+                                    a(href="/gfs/") Your clients' documents and files
+                                p.card-description Store and grant access to documents and data to your individual clients throughout the year.
+                                .checkbox
+                                        label
+                                            input(type="checkbox", name="connectAlways")
+                                            span.checkbox-material
+                                            | Login directly to Secure GFS
+                                .footer.text-right
+                                    a.btn.btn-white.btn-round(href="/connect/") Launch
+        include ../../public/app/footer/appscripts

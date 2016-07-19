@@ -7,15 +7,15 @@ nav.navbar.navbar-primary.navbar-fixed-top
 				.col-md-9
 					ul.nav.navbar-nav.nav-tabs.navbar-left
 						li(style="margin-left:10px")
-							a.btn.btn-info(href="/office/") My Office
+							a.btn.btn-simple(href="/office/") My Office
 						li(style="margin-left:10px")
-							a.btn.btn-info(href="/connect/") A.Connect
+							a.btn.btn-simple(href="/connect/") A.Connect
 						li
-							a.btn.btn-info(href="/gfs/") Secure GFS
+							a.btn.btn-simple(href="/gfs/") Secure GFS
 
 					ul.nav.navbar-nav.navbar-right.nav-tabs
 						li.dropdown
-							a.btn.dropdown-toggle(id="loginLink", data-toggle="dropdown", ara-expanded="false") #{ user.fname } &nbsp;&nbsp;
+							a.btn.dropdown-toggle.btn-simple(id="loginLink", data-toggle="dropdown", ara-expanded="false") #{ user.fname } &nbsp;&nbsp;
 								b.caret 
 								.ripple-container
 							ul.dropdown-menu.dropdown-menu-right

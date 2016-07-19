@@ -8,6 +8,10 @@ module.exports = function(app){
 	
 	
 	// Main
+	app.get('/choice/', isLoggedIn, function(req, res){
+		res.render('choice', {user: req.user});
+	});
+
 	app.get('/connect/', isLoggedIn, function(req, res){
 		res.render('connect', {user: req.user, title: "Advent Connect"});
 		//res.json(req.user);
@@ -18,11 +22,11 @@ module.exports = function(app){
 	});
 	
 	app.post('/access/register', passport.authenticate('local-signup', {
-		successRedirect: '/connect/',
+		successRedirect: '/choice/',
 		failureRedirect: '/'
 	}));
 	app.post('/access/login', passport.authenticate('local-login', {
-		successRedirect: '/connect/',
+		successRedirect: '/choice/',
 		failureRedirect: '/'
 	}));
 

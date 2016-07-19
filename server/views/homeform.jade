@@ -3,11 +3,10 @@ html(lang="en")
     head
         title Reconnect App
         include ../includes/head
-    body.signup-page(ng-app="app")
+    body.login-page(ng-app="app")
         include ../includes/mainNav
-        .wrapper
-            .header.header-filter(style="background-image: url('img/city.jpg');background-size: cover; background-position: top center;")
-                .container
-                    .row(ng-view)                        
-                include ../includes/footer
+        .page-header.header-filter(style="background-image: url('img/city.jpg');background-size: cover; background-position: top center;")
+            .container
+                .row(ng-view)                        
+            include ../includes/footer
         include ../../public/app/footer/appscripts
