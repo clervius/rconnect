@@ -2,32 +2,35 @@ nav.navbar.navbar-primary.navbar-fixed-top
 		.container
 			.row
 				.col-md-3
-					a(href="/", id="logoLink") 
+					a(href="/choice/", id="logoLink") 
 						img(src="/img/logo_white.png", id="headerLogo" style="position:relative;top:10px")
 				.col-md-9
-					ul.nav.navbar-nav.nav-tabs.navbar-left
-						li(style="margin-left:10px")
-							a.btn.btn-simple(href="/office/") My Office
-						li(style="margin-left:10px")
-							a.btn.btn-simple(href="/connect/") A.Connect
-						li
-							a.btn.btn-simple(href="/gfs/") Secure GFS
-
+					.nav.navbar-nav.nav-tabs.navbar-left(style="")
+						h4.title(style="color:white;position:relative;left:12px;top:4px") #{product}
 					ul.nav.navbar-nav.navbar-right.nav-tabs
 						li.dropdown
 							a.btn.dropdown-toggle.btn-simple(id="loginLink", data-toggle="dropdown", ara-expanded="false") #{ user.fname } &nbsp;&nbsp;
 								b.caret 
 								.ripple-container
 							ul.dropdown-menu.dropdown-menu-right
-								li.dropdown-header Admin settings
 								li
 									a(href="/app/user/") 
 										i.material-icons person
 										| Account
+								li.divider
+								li.dropdown-header Products
 								li
-									a(href="/app/user/notifications/") 
-										i.material-icons add_alert
-										| Notifications
+									a(href="/office/") 
+										i.fa.fa-area-chart 
+										| &nbsp;&nbsp;&nbsp;My Office
+								li
+									a(href="/connect/") 
+										i.fa.fa-newspaper-o
+										| &nbsp;&nbsp;&nbsp;A.Connect
+								li
+									a(href="/gfs/") 
+										i.fa.fa-archive
+										| &nbsp;&nbsp;&nbsp;Secure GFS
 								li.divider
 								li
 									a(href="/logout") 

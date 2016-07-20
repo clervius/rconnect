@@ -13,7 +13,7 @@ module.exports = function(app){
 	});
 
 	app.get('/connect/', isLoggedIn, function(req, res){
-		res.render('connect', {user: req.user, title: "Advent Connect"});
+		res.render('connect', {user: req.user, title: "Advent Connect", product: "Advent Connect"});
 		//res.json(req.user);
 		console.log(req.user)
 	});
