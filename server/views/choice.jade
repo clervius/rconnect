@@ -26,9 +26,10 @@ html(lang="en")
                                             input(type="checkbox", name="connectAlways")
                                             span.checkbox-material
                                             | Login directly to My Office                                           
-                                .footer.text-right
-                                    
-                                    a.btn.btn-white.btn-round(href="/connect/") Launch
+                                .footer.text-right                                    
+                                    a.btn.btn-warning.btn-round(href="/connect/")
+                                        i.fa.fa-external-link
+                                        | &nbsp;&nbsp;&nbsp;Launch
                     .col-md-4
                         .card
                             .content.content-primary
@@ -44,7 +45,9 @@ html(lang="en")
                                             span.checkbox-material
                                             | Login directly to A.Connect
                                 .footer.text-right
-                                    a.btn.btn-white.btn-round(href="/connect/") Launch
+                                    a.btn.btn-warning.btn-round(href="/connect/") 
+                                        i.fa.fa-external-link
+                                        | &nbsp;&nbsp;&nbsp;Launch
                     .col-md-4
                         .card
                             .content.content-primary
@@ -60,5 +63,7 @@ html(lang="en")
                                             span.checkbox-material
                                             | Login directly to Secure GFS
                                 .footer.text-right
-                                    a.btn.btn-white.btn-round(href="/connect/") Launch
+                                    a.btn.btn-info.btn-round(href="/connect/") 
+                                        i.fa.fa-check-square-o
+                                        | &nbsp;&nbsp;&nbsp;Subscribe
         include ../../public/app/footer/appscripts

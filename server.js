@@ -22,7 +22,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./server/config/routes')(app);
+require('./server/config/routes')(app, passport);
 
 
 

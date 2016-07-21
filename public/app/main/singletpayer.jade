@@ -83,15 +83,15 @@
 							span.form-control-feedback
 								i.material-icons attach_money
 					.col-sm-4
-						input.btn.btn-danger.btn-raised(type="submit", value="Send Quote")
+						input.btn.btn-warning.btn-raised(type="submit", value="Send Quote")
 
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
-			li.text-danger
+			li.text-warning
 				small Submitted
 			li {{ taxpayer.date | date }} 
 			hr
-			li.text-danger
+			li.text-warning
 				small 
 					i.material-icons(style="font-size:12px") access_time
 					| &nbsp;&nbsp;Elapsed

@@ -4,7 +4,7 @@ var path = require('path');
 var express = require('express');
 
 
-module.exports = function(app){
+module.exports = function(app, passport){
 	
 	
 	// Main
@@ -43,15 +43,21 @@ module.exports = function(app){
 	    res.render('../../public/' + req.params[0]); 
 	});
 	
-	// catch all
-	app.get('*', function(req, res){
-		res.render('index');		
-	});
+	
 
 	app.get('/logout', function(req, res){
 		req.logout();
-		res.redirect('/');
-	})
+		res.redirect('http://adventtax.pro');
+	});
+
+	// catch all
+	app.get('*', function(req, res, next){
+		if(req.isAuthenticated()){
+			res.redirect('/choice/')
+		}else{
+			res.render('index')
+		}	
+	});
 
 }
 

@@ -1,8 +1,8 @@
 nav.navbar.navbar-primary.navbar-fixed-top
 		.container
 			.row
-				.col-md-3
-					a(href="/choice/", id="logoLink") 
+				.col-md-3(ng-app="app")
+					a(ng-redirect-to="/choice/", id="logoLink") 
 						img(src="/img/logo_white.png", id="headerLogo" style="position:relative;top:10px")
 				.col-md-9
 					.nav.navbar-nav.nav-tabs.navbar-left(style="")

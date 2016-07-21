@@ -11,7 +11,7 @@
 									|Taxpayer in 
 									strong {{ taxpayer.city }}, {{ taxpayer.state }}
 							li.pull-right.text-right
-								a.btn.btn-danger.btn-sm.btn-raised(href="/connect/tpayer/{{ taxpayer._id }}") 
+								a.btn.btn-warning.btn-sm.btn-raised(href="/connect/tpayer/{{ taxpayer._id }}") 
 									i.material-icons launch
 									|View                        	
 			.content
@@ -34,11 +34,11 @@
 							td {{ taxpayer.numDdep }}
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
-			li.text-danger
+			li.text-warning
 				small Submitted
 			li {{ taxpayer.date | date:'MM/dd/yyyy' }}
 			hr
-			li.text-danger
+			li.text-warning
 				small 
 					i.material-icons(style="font-size:12px") access_time
 					| &nbsp;&nbsp;Elapsed
