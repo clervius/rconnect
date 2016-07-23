@@ -24,12 +24,12 @@
 							td {{ accepted._tpayer.lastName}}
 							td {{ accepted._tpayer.tpDob | date }}
 				.clearfix
-				h4 Contact Information
+				p.text-warning CONTACT INFORMATION
 				table.table
 					thead
 						tr
 							th Phone Number
-							th Email Address
+							th Email 
 							th City
 							th State
 							th Zip
@@ -41,7 +41,9 @@
 							td {{ accepted._tpayer.state }}
 							td {{ accepted._tpayer.zip }}
 				.clearfix
-				h4 Taxpayer information
+				br
+				br
+				p.text-warning TAXPAYER INFORMATION
 				table.table
 					thead
 						tr
@@ -58,7 +60,7 @@
 				.clearfix
 				br
 				br
-				h4 Dependent information
+				p.text-warning DEPENDENT INFORMATION
 				table.table
 					thead
 						tr
@@ -77,7 +79,7 @@
 				.clearfix
 				br
 				br
-				h4 Income information
+				p.text-warning INCOME INFORMATION
 				table.table
 					thead
 						tr
@@ -102,11 +104,11 @@
 				.clearfix
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
-			li.text-danger
+			li.text-warning
 				small Quote Submitted
 			li {{ accepted.createTime | date }} 
 			hr
-			li.text-danger
+			li.text-warning
 				small 
 					i.material-icons(style="font-size:12px") access_time
 					| &nbsp;&nbsp;Quote Requested

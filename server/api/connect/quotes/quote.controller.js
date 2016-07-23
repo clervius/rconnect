@@ -26,6 +26,24 @@ exports.createQuote = function(req, res){
 	})
 };
 
+exports.changeQuote = function(req, res){
+	console.log('changing to accepted');
+
+	quote.findByIdAndUpdate(req.body.theQuote, {
+		$set:{
+			'accepted': true
+		}
+	}, function(err, quote){
+		if(err){
+			console.log("error could not update to accepted")
+		}else{
+			console.log("Success, quote now accepted");
+			console.log(quote);
+			res.json(quote);
+		}
+	})
+};
+
 exports.acceptedQuotes = function(req, res){
 	quote.find({accepted: true}).exec(function(err, quotes){
 		if(err){

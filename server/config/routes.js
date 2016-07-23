@@ -34,6 +34,7 @@ module.exports = function(app, passport){
 	app.get('/connect/taxpayers/*', require('../api/connect/taxpayer'));
 	app.post('/connect/taxpayers/*', require('../api/connect/quotes'));
 	app.get('/connect/quotes/*', require('../api/connect/quotes'));
+	app.post('/connect/quotes/*', require('../api/connect/quotes'));
 	app.get('/app/user/', require('../api/user'));
 	app.use('/auth', require('../auth'));
 	//app.get('/app/users/*', require('../api/user'));

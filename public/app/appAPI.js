@@ -12,6 +12,7 @@
 			createQuote: createQuote,
 			getAllPendingQuotes: getAllPendingQuotes,
 			getSinglePendingQuote: getSinglePendingQuote,
+			changeToAccepted: changeToAccepted,
 			deletePendingQuote: deletePendingQuote,
 			getAllAcceptedQuotes: getAllAcceptedQuotes,
 			getSingleAcceptedQuote: getSingleAcceptedQuote
@@ -36,7 +37,9 @@
 		function getSinglePendingQuote(quote){
 			return $http.get('/connect/quotes/pending/' + quote);
 		}
-
+		function changeToAccepted(thisQuote){
+			return $http.post('/connect/quotes/accept', thisQuote);
+		}
 		function deletePendingQuote(quote){
 			return $http.delete('/connect/quotes/' + quote);
 		}

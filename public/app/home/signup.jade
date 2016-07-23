@@ -4,7 +4,7 @@
 			h4 Confirm Account
 		p.text-divider For registered users ONLY
 		.content(style="padding:0 40px")
-			form(name="form", action="when we go live, get from formAction jade file")
+			form(name="form", ng-submit="register(form)", novalidate, action="/access/register" method="post")
 				.row
 					.col-sm-6
 						.form-group.label-floating.is-empty

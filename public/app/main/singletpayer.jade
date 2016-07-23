@@ -11,7 +11,7 @@
 									|Taxpayer in 
 									strong {{ taxpayer.city }}, {{ taxpayer.state }}                       	
 			.content
-				h4 Taxpayer information
+				p.text-warning TAXPAYER INFORMATION
 				table.table
 					thead
 						tr
@@ -28,7 +28,7 @@
 				.clearfix
 				br
 				br
-				h4 Dependent information
+				p.text-warning DEPENDENT INFORMATION
 				table.table
 					thead
 						tr
@@ -47,7 +47,7 @@
 				.clearfix
 				br
 				br
-				h4 Income information
+				p.text-warning INCOME INFORMATION
 				table.table
 					thead
 						tr
@@ -91,9 +91,5 @@
 				small Submitted
 			li {{ taxpayer.date | date }} 
 			hr
-			li.text-warning
-				small 
-					i.material-icons(style="font-size:12px") access_time
-					| &nbsp;&nbsp;Elapsed
-			li 1 day, 2:00
+
 					

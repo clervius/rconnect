@@ -11,7 +11,7 @@
 									| {{ accepted._tpayer.firstName }} {{ accepted._tpayer.lastName}} - 
 									strong {{ accepted.quote | currency }}
 							li.pull-right.text-right
-								a.btn.btn-primary.btn-sm.btn-raised(href="/connect/accepted/{{ accepted._id}}") 
+								a.btn.btn-warning.btn-sm.btn-raised(href="/connect/accepted/{{ accepted._id}}") 
 									i.material-icons launch
 									|View                        	
 			.content
@@ -34,11 +34,11 @@
 							td {{ accepted._tpayer.numDdep }}	
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
-			li.text-danger
+			li.text-warning
 				small Created
 			li {{ accepted.createTime | date }}
 			hr
-			li.text-danger
+			li.text-warning
 				small 
 					i.material-icons(style="font-size:12px") access_time
 					| &nbsp;&nbsp;Elapsed

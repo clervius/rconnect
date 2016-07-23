@@ -7,7 +7,7 @@ var router = express.Router();
 
 
 router.post('/connect/taxpayers/', controller.createQuote);
-
+router.post('/connect/quotes/accept', controller.changeQuote);
 router.get('/connect/quotes/accepted/', controller.acceptedQuotes);
 router.get('/connect/quotes/accepted/:id', controller.acceptedQuote);
 

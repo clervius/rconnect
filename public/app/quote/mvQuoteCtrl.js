@@ -31,9 +31,9 @@
 
 	angular.module('app').controller('mvQuoteCtrl', mvQuoteCtrl);
 
-	mvQuoteCtrl.$inject = ['$scope', 'appAPI', '$routeParams'];
+	mvQuoteCtrl.$inject = ['$scope', 'appAPI', '$routeParams', '$window'];
 
-	function mvQuoteCtrl($scope, appAPI, $routeParams){
+	function mvQuoteCtrl($scope, appAPI, $routeParams, $window){
 
 		$scope.pending = {};		
 		
@@ -47,6 +47,22 @@
 				console.log('failed to get single pending');
 				console.log(err);
 			});
+
+		$scope.changeAccepted = function(){
+			var thisQuote = {
+				theQuote: $scope.pending._id
+			};
+
+			appAPI.changeToAccepted(thisQuote).then(function(data){
+				console.log('changed to accepeted');
+				console.log(data);
+				$window.location.href = '/connect/'
+
+			}).catch(function(err){
+				console.log('did not change to accepeted');
+				console.log(err);
+			});
+		}
 
 	};
 

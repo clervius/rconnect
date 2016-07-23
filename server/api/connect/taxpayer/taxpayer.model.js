@@ -22,6 +22,24 @@ var incExSchema = new Schema({
 	code: String
 });
 
+var exSchema = new Schema({
+	exType: String,
+	reMortgageInterest: Number,
+	reTaxes: Number,
+	reRepaymenCredit: Number,
+	charitableDonation: Number,
+	medicalExpenses: Number,
+	insPremiumTaxCredit: Number,
+	insSharedPayment: Number,
+	insTaxCreditRepayment: Number,
+	childcare: Number,
+	edStudentLoanInterest: Number,
+	edUndergradExpenses: Number,
+	edOtherTuition: Number,
+	jobExpenses: Number,
+	taxPreparationFee: Number,
+	FedQuarterlyTaxesPaid: Number
+});
 var taxpayerSchema = new Schema({
 	firstName: String,
 	lastName: String,
@@ -34,6 +52,7 @@ var taxpayerSchema = new Schema({
 	student: Boolean,
 	tpDob: Date,
 	numDdep: Number,
+	decided: Boolean,
 	dependents: [dependentSchema],
 	income: [incExSchema]
 }, {

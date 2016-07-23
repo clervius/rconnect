@@ -11,7 +11,7 @@
 									| {{ pending._tpayer.city }} taxpayer - Quoted&nbsp;
 									strong {{ pending.quote | currency }}                      	
 			.content
-				h4 Taxpayer information
+				p.text-warning TAXPAYER INFORMATION
 				table.table
 					thead
 						tr
@@ -28,7 +28,7 @@
 				.clearfix
 				br
 				br
-				h4 Dependent information
+				p.text-warning DEPENDENT INFORMATION
 				table.table
 					thead
 						tr
@@ -47,7 +47,7 @@
 				.clearfix
 				br
 				br
-				h4 Income information
+				p.text-warning INCOME INFORMATION
 				table.table
 					thead
 						tr
@@ -65,18 +65,22 @@
 								td {{ income.stTax | currency }}
 				.clearfix
 				hr
-				.col-md-4.col-md-offset-8.text-right
-					button.btn.btn-primary.btn-raised
-						i.material-icons delete &nbsp;
-						| Remove
+				.row
+					.col-md-12.text-right
+						button.btn.btn-primary.btn-raised(ng-click="changeAccepted()")
+							i.material-icons thumb_up &nbsp;
+							| Accept
+						button.btn.btn-warning.btn-raised
+							i.material-icons delete &nbsp;
+							| Remove
 				.clearfix
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
-			li.text-danger
+			li.text-warning
 				small Quote Submitted
 			li {{ pending.createTime | date }} 
 			hr
-			li.text-danger
+			li.text-warning
 				small 
 					i.material-icons(style="font-size:12px") access_time
 					| &nbsp;&nbsp;Quote Requested

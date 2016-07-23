@@ -2752,7 +2752,7 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   color: #fff;
 }
 .alert.alert-primary {
-  background-color: #a72abd;
+  background-color: #001325;
   color: #ffffff;
 }
 .alert.alert-primary a, .alert.alert-primary .alert-link {
@@ -2766,14 +2766,14 @@ select.form-control[multiple], .form-group.is-focused select.form-control[multip
   color: #ffffff;
 }
 .alert.alert-info {
-  background-color: #00cae3;
+  background-color: #a3c1c9;
   color: #ffffff;
 }
 .alert.alert-info a, .alert.alert-info .alert-link {
   color: #ffffff;
 }
 .alert.alert-warning {
-  background-color: #ff9e0f;
+  background-color: #c05e2e;
   color: #ffffff;
 }
 .alert.alert-warning a, .alert.alert-warning .alert-link {
