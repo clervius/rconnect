@@ -48,15 +48,15 @@ module.exports = function(app, passport){
 
 	app.get('/logout', function(req, res){
 		req.logout();
-		res.redirect('http://adventtax.pro');
+		res.redirect('/');
 	});
 
 	// catch all
 	app.get('*', function(req, res, next){
 		if(req.isAuthenticated()){
-			res.redirect('/choice/')
+			res.redirect('/choice/');
 		}else{
-			res.render('index')
+			res.redirect('/access/signin');
 		}	
 	});
 
