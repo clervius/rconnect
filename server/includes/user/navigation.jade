@@ -1,4 +1,12 @@
 .row
+	.col-md-10
+		.tab-content
+			.tab-pane.active(id="usrAccount")
+				include account
+			.tab-pane(id="usrSub")
+				include subscriptions
+			.tab-pane(id="usrBilling")
+				include billing
 	.col-md-2
 		ul.nav.nav-pills.nav-pills-primary.nav-stacked.nav-pills-icons
 			li.active
@@ -13,11 +21,3 @@
 				a(href="#usrBilling", data-toggle="tab", role="tab") 
 					i.material-icons credit_card
 					| Billing
-	.col-md-10
-		.tab-content
-			.tab-pane.active(id="usrAccount")
-				include account
-			.tab-pane(id="usrSub")
-				include subscriptions
-			.tab-pane(id="usrBilling")
-				include billing

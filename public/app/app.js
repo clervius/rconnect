@@ -13,37 +13,33 @@
 	    		templateUrl: '../partials/app/home/signin',
 	    		//controller: 'SigninCtrl'
 	    	})
-	    	.when('/app/account/', {
-	    		templateUrl: '..partials/app/account/account',
-	    		controller: 'actCtrl'
-	    	})
 	        .when('/connect/', {
-	            templateUrl: '../partials/app/main/main',
+	            templateUrl: '../partials/app/modules/connect/main/main',
 	            controller: 'mvMainCtrl',
 	            tab: 'home'
 	        })
 	        .when('/connect/tpayer/:id', {
-	        	templateUrl: '../partials/app/main/singletpayer',
+	        	templateUrl: '../partials/app/modules/connect/main/singletpayer',
 	        	controller: 'mvSingleTPCtrl',
 	        	tab: 'home'
 	        })
 	        .when('/connect/pending/', {
-	        	templateUrl: '../partials/app/quote/pendingQuotes',
+	        	templateUrl: '../partials/app/modules/connect/quote/pendingQuotes',
 	        	controller: 'mvQuotesCtrl',
 	        	tab: 'pendings'
 	        })
 	        .when('/connect/pending/:id', {
-	        	templateUrl: '../partials/app/quote/pendingQuote',
+	        	templateUrl: '../partials/app/modules/connect/quote/pendingQuote',
 	        	controller: 'mvQuoteCtrl',
 	        	tab: 'pendings'
 	        })
 	        .when('/connect/accepted/', {
-	        	templateUrl: '../partials/app/quote/acceptedQuotes',
+	        	templateUrl: '../partials/app/modules/connect/quote/acceptedQuotes',
 	        	controller: 'mvAcceptedsCtrl',
 	        	tab: 'accepteds'
 	        })
 	        .when('/connect/accepted/:id', {
-	        	templateUrl: '../partials/app/quote/acceptedQuote',
+	        	templateUrl: '../partials/app/modules/connect/quote/acceptedQuote',
 	        	controller: 'mvAcceptedCtrl',
 	        	tab: 'accepteds'
 	        });

@@ -18,7 +18,7 @@ module.exports = function(app, passport){
 		console.log(req.user)
 	});
 	app.get('/app/account/', isLoggedIn, function(req, res){
-		res.render('user', {user: req.user, title: "User Account"});
+		res.render('user', {user: req.user, title: "User Account", product: "Your Account Settings"});
 	});
 	app.get('/access/*', function(req, res){
 		res.render('homeform');

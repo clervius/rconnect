@@ -4,8 +4,8 @@ html(lang="en")
         title #{ title }
         include head
     body(ng-app="app", ng-init='user = "'+user._id+'"')  
-        include ../../public/app/header/header
+        include ../../public/app/components/header/header
         section.wrapper(id="mainBody")
             block content
         block footer
-        include ../../public/app/footer/appscripts
+        include ../../public/app/components/footer/appscripts

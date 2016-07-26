@@ -69,7 +69,7 @@ module.exports = function(passport) {
                 newUser.city = req.body.city;
                 newUser.state = req.body.state;
                 newUser.zip = req.body.zip;
-                newUser.phoneNumer = req.body.phoneNumber;
+                newUser.phoneNumber = req.body.phoneNumber;
 
                 // save the user
                 newUser.save(function(err) {
