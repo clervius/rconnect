@@ -9,7 +9,7 @@
 								a 
 									i.material-icons thumb_up
 									| {{ accepted._tpayer.firstName }} {{ accepted._tpayer.lastName}} - 
-									strong {{ accepted.quote | currency }}
+									span.quoteNum.text-info {{ accepted.quote | currency }}
 							li.pull-right.text-right
 								a.btn.btn-warning.btn-sm.btn-raised(href="/connect/accepted/{{ accepted._id}}") 
 									i.material-icons launch

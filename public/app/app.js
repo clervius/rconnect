@@ -13,6 +13,10 @@
 	    		templateUrl: '../partials/app/home/signin',
 	    		//controller: 'SigninCtrl'
 	    	})
+	    	.when('/app/user/account', {
+	    		templateUrl: '..partials/app/account/account',
+	    		controller: 'actCtrl'
+	    	})
 	        .when('/connect/', {
 	            templateUrl: '../partials/app/main/main',
 	            controller: 'mvMainCtrl',

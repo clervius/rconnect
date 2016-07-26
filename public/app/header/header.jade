@@ -12,27 +12,27 @@ nav.navbar.navbar-primary.navbar-fixed-top
 							a.btn.dropdown-toggle.btn-simple(id="loginLink", data-toggle="dropdown", ara-expanded="false") #{ user.fname } &nbsp;&nbsp;
 								b.caret 
 								.ripple-container
-							ul.dropdown-menu.dropdown-menu-right
+							ul.dropdown-menu.dropdown-menu-right(ng-app="app")
 								li
-									a(href="/app/user/") 
+									a(ng-redirect-to="/app/user/account") 
 										i.material-icons person
 										| Account
 								li.divider
 								li.dropdown-header Products
 								li
-									a(href="/office/") 
+									a(ng-redirect-to="/office/") 
 										i.fa.fa-area-chart 
 										| &nbsp;&nbsp;&nbsp;My Office
 								li
-									a(href="/connect/") 
+									a(ng-redirect-to="/connect/") 
 										i.fa.fa-newspaper-o
 										| &nbsp;&nbsp;&nbsp;A.Connect
 								li
-									a(href="/gfs/") 
+									a(ng-redirect-to="/gfs/") 
 										i.fa.fa-archive
 										| &nbsp;&nbsp;&nbsp;Secure GFS
 								li.divider
 								li
-									a(href="/logout") 
+									a(ng-redirect-to="/logout") 
 										i.material-icons exit_to_app
 										| Logout

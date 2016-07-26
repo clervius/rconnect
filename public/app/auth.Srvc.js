@@ -12,6 +12,8 @@
 			currentUser = User.get();
 		}
 
+		
+
 		return {
 			// Create new user
 			createUser: function(user, callback){

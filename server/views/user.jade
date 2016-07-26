@@ -3,8 +3,8 @@ extends ../includes/applayout
 block content
 	.container
 		.row
-			include ../../public/app/sidenav/sidenav
-			.col-md-9(ng-view)
+			include ../../public/app/sidenav/user
+			.col-md-9(ng-app="app")
 block footer
 	footer.container.text-center
 		p &copy; 2016 Advent Software

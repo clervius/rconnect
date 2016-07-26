@@ -9,7 +9,7 @@
 								a 
 									i.material-icons timer
 									| Taxpayer in  {{ pending._tpayer.city}} - 
-									strong {{ pending.quote | currency }}
+									span.quoteNum.text-info {{ pending.quote | currency }}
 							li.pull-right.text-right
 								a.btn.btn-warning.btn-sm.btn-raised(href="/connect/pending/{{ pending._id}}") 
 									i.material-icons launch
@@ -34,11 +34,11 @@
 							td {{ pending._tpayer.numDdep }}	
 	.col-md-3
 		ul.list-unstyled(style="padding-top:55px")
-			li.text-danger
+			li.text-warning
 				small Quote Submitted
 			li {{ pending.createTime | date }}
 			hr
-			li.text-danger
+			li.text-warning
 				small 
 					i.material-icons(style="font-size:12px") access_time
 					| &nbsp;&nbsp;Quote requested

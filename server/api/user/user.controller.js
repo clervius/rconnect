@@ -21,12 +21,18 @@ exports.create = function(req, res, next){
 };
 // Get a single user
 exports.show = function(req, res, next){
-	var userId = req. params.id;
+	var userId = req.params.id;
 
 	User.findById(userId, function(err, user){
-		if(err){ return next(err)}
-		if(!user){ return res.send(401)}
-		res.json(user.profile)
+		if(err){ 
+			return next(err);
+			console.log("Error");
+		}
+		if(!user){ 
+			return res.send(401);
+			console.log("User not found")
+		}
+		res.json(user)
 	});
 };
 // Delete a user
