@@ -14,7 +14,7 @@ nav.navbar.navbar-primary.navbar-fixed-top
 								.ripple-container
 							ul.dropdown-menu.dropdown-menu-right(ng-app="app")
 								li
-									a(ng-redirect-to="/app/user/account") 
+									a(ng-redirect-to="/app/account", href="/app/account") 
 										i.material-icons person
 										| Account
 								li.divider
@@ -24,7 +24,7 @@ nav.navbar.navbar-primary.navbar-fixed-top
 										i.fa.fa-area-chart 
 										| &nbsp;&nbsp;&nbsp;My Office
 								li
-									a(ng-redirect-to="/connect/") 
+									a(ng-redirect-to="/connect/", href="/connect/") 
 										i.fa.fa-newspaper-o
 										| &nbsp;&nbsp;&nbsp;A.Connect
 								li
@@ -33,6 +33,6 @@ nav.navbar.navbar-primary.navbar-fixed-top
 										| &nbsp;&nbsp;&nbsp;Secure GFS
 								li.divider
 								li
-									a(ng-redirect-to="/logout") 
+									a(ng-redirect-to="/logout", href="/logout") 
 										i.material-icons exit_to_app
 										| Logout

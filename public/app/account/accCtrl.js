@@ -6,9 +6,11 @@
 	actCtrl.$inject = ['$scope', 'appAPI', '$routeParams', '$route'];
 
 	function actCtrl($scope, appAPI, $routeParams, $route){
-		
+
 		$scope.$route = $route;
 		
+		
+
 		appAPI.getSingleUser($scope.user)
 			.then(function(data){
 				console.log('Found the user');

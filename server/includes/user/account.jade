@@ -1,0 +1,125 @@
+form
+	.row
+		.col-md-4.text-right
+			h3.title Profile
+			h6.description Your email address is your identity on Advent Software
+		.col-md-8
+			.card
+				.content
+					.row
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label First Name
+								input.form-control(value="#{ user.fname}", name="fname")
+								span.material-input
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label Last Name
+								input.form-control(value="#{ user.lname}", name="lname")
+								span.material-input
+					.row
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label Email
+								input.form-control(value="#{ user.email}", name="email")
+								span.material-input
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label Phone Number
+								input.form-control(value="#{ user.phoneNumber}", name="phoneNumber")
+								span.material-input
+					h6.card-title Address
+					.row
+						.col-sm-12
+							.form-group.label-floating.has-primary
+								label.control-label Street Address
+								input.form-control(value="#{user.sAddress}", name="sAddress")
+								span.material-input
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label City
+								input.form-control(value="#{ user.city}", name="city")
+								span.material-input
+						.col-sm-2
+							.form-group.label-floating.has-primary
+								label.control-label State
+								input.form-control(value="#{ user.state}", name="state")
+								span.material-input
+						.col-sm-4
+							.form-group.label-floating.has-primary
+								label.control-label Zip
+								input.form-control(value="#{ user.zip}", name="zip")
+								span.material-input
+	.row
+		.col-md-4.text-right
+			h3.title Password
+			h6.description Use this section only if you would like to change your password
+		.col-md-8
+			.card
+				.content
+					.row
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label Enter Your Current Password
+								input.form-control(name="oldPassword", type="password")
+								span.material-input
+					.row
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label New Password
+								input.form-control(name="password", type="password")
+								span.material-input
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label Repeat Password
+								input.form-control(name="rpassword", type="password")
+								span.material-input
+	.row
+		.col-md-4.text-right
+			h3.title Notifications
+			h6.description Set and un-set your notifications here
+		.col-md-8
+			.card
+				.content
+					.row
+						.col-sm-12
+							.table-responsive
+								table.table
+									thead
+										tr
+											th Product
+											th Service
+											th Phone
+											th Email
+									tbody
+										tr
+											td Advent Connect
+											td New Taxpayer
+											td.td-actions.togglebutton
+												label
+													input(type="checkbox", name="", checked)
+											td.td-actions.togglebutton
+												label
+													input(type="checkbox", name="")
+										tr
+											td 
+											td Quote Accepted
+											td.td-actions.togglebutton
+												label
+													input(type="checkbox", name="", checked)
+											td.td-actions.togglebutton
+												label
+													input(type="checkbox", name="", checked)
+										tr
+											td Secure GFS
+											td New upload
+											td.td-actions.togglebutton
+												label
+													input(type="checkbox", name="")
+											td.td-actions.togglebutton
+												label
+													input(type="checkbox", name="", checked)
+	.row
+		.col-sm-12
+			button.btn.btn-primary.pull-right.btn-wd Update Account
+

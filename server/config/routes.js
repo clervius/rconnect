@@ -17,7 +17,7 @@ module.exports = function(app, passport){
 		//res.json(req.user);
 		console.log(req.user)
 	});
-	app.get('/app/', isLoggedIn, function(req, res){
+	app.get('/app/account/', isLoggedIn, function(req, res){
 		res.render('user', {user: req.user, title: "User Account"});
 	});
 	app.get('/access/*', function(req, res){
@@ -38,7 +38,7 @@ module.exports = function(app, passport){
 	app.post('/connect/taxpayers/*', require('../api/connect/quotes'));
 	app.get('/connect/quotes/*', require('../api/connect/quotes'));
 	app.post('/connect/quotes/*', require('../api/connect/quotes'));
-	app.get('/app/user/*', require('../api/user'));
+	app.get('/app/*', require('../api/user'));
 	app.use('/auth', require('../auth'));
 	//app.get('/app/users/*', require('../api/user'));
 

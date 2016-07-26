@@ -13,7 +13,7 @@
 	    		templateUrl: '../partials/app/home/signin',
 	    		//controller: 'SigninCtrl'
 	    	})
-	    	.when('/app/user/account', {
+	    	.when('/app/account/', {
 	    		templateUrl: '..partials/app/account/account',
 	    		controller: 'actCtrl'
 	    	})
