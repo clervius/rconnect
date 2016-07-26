@@ -10,6 +10,66 @@
 						i.fa.fa-cc-visa
 						|&nbsp;Visa ending in &nbsp;
 						strong 5486
+					hr
+					.row
+						.col-sm-7
+							.row
+								.col-sm-12
+									.form-group.label-floating.has-primary
+										label.control-label Card Number
+										input.form-control(name="cardNumber")
+										span.material-input
+							.row
+								.col-sm-3
+									.form-group.label-floating.has-primary
+										label.control-label Month
+										input.form-control(name="cardMonth")
+										span.material-input
+								.col-sm-3
+									.form-group.label-floating.has-primary
+										label.control-label Year
+										input.form-control(name="cardYear")
+										span.material-input
+								.col-sm-4
+									.form-group.label-floating.has-primary
+										label.control-label CVC
+										input.form-control(name="cardcvc")
+										span.material-input
+						.col-sm-5
+							.radio(style="position:relative;top:35px")
+								label
+									input(type="radio", name="newAddress", checked, value="oldAddy")
+									span.circle
+									| &nbsp; Use Account Address
+							.radio(style="position:relative;top:30px")
+								label
+									input(type="radio", name="newAddress", value="newAddy")
+									span.circle
+									| &nbsp; Use Other Address
+					.row.cc-newaddy
+						hr
+						
+						.col-sm-12
+							h6.card-title Address
+							.form-group.label-floating.has-primary
+								label.control-label Street Address
+								input.form-control(name="sAddress")
+								span.material-input
+						.col-sm-6
+							.form-group.label-floating.has-primary
+								label.control-label City
+								input.form-control(name="city")
+								span.material-input
+						.col-sm-2
+							.form-group.label-floating.has-primary
+								label.control-label State
+								input.form-control(name="state")
+								span.material-input
+						.col-sm-4
+							.form-group.label-floating.has-primary
+								label.control-label Zip
+								input.form-control(name="zip")
+								span.material-input
 				.footer
 					.col-sm-12
 						button.btn.pull-right.btn-primary 
