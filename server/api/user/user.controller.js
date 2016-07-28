@@ -8,6 +8,39 @@ var validationError = function(res, err) {
   return res.json(422, err);
 };
 
+// Update User profile
+exports.changeInfo = function(req, res, next){
+	var userId = req.user._id;
+	var fname = req.body.fname;
+	var lname = req.body.lname;
+	var sAddress = req.body.sAddress;
+	var city = req.body.city;
+	var state = req.body.state;
+	var email = req.body.email;
+	var phoneNumber = req.body.phoneNumber;
+	var password = req.body.password;
+
+	User.findById(userId, function(err, user){
+		console.log(user)
+		if(fname.length){user.fname = fname}
+		if(lname.length){user.lname = lname};
+		if(sAddress.length){user.sAddress = sAddress};
+		if(city.length){user.city = city};
+		if(state.length){user.state = state};
+		if(email){user.email = email};
+		if(phoneNumber){user.phoneNumber = phoneNumber};
+		if(password){user.password = password};
+		console.log(user)
+		user.save(function(err){
+			if(err){console.log('not saved')}
+		})
+	});
+
+	next();
+}
+
+
+
 // Create a new user
 exports.create = function(req, res, next){
 	var newUser = new User(req.body);

@@ -2,9 +2,13 @@
 
 // load all the things we need
 var LocalStrategy   = require('passport-local').Strategy;
+var config = require('./config');
+var sg = require('sendgrid').SendGrid('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');
+var mail = sg.emptyRequest();
+
 
 // load up the user model
-var User            = require('../api/user/user.model');
+var User = require('../api/user/user.model');
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -71,6 +75,23 @@ module.exports = function(passport) {
                 newUser.zip = req.body.zip;
                 newUser.phoneNumber = req.body.phoneNumber;
 
+                // Mailchimp information
+                // Email information
+                mail.body = {
+                    "personalizations": [
+                        {
+                            "to": [{"email":newUser.email}],
+                            "subject": newUser.fname + " Congrats and welcome to Advent Software!"
+                        }
+                    ],
+                    "from": { "email": "support@advent.software"},
+                    "content": [{
+                        "type": "text/html",
+                        "value": "<b>Welcome to Advent Software!</b><br><br><b>So what's next?</b><br><br><p>Login to http://advent.software with your email and password to access your subscriptions. contact us anytime via support@advent.software"
+                    }]
+                };
+                mail.method = 'POST'
+                mail.path = '/v3/mail/send'
                 // save the user
                 newUser.save(function(err) {
                     if (err){
@@ -78,9 +99,16 @@ module.exports = function(passport) {
                         console.log(err)
 
                     }else{
+                        
+                        console.log('user created');
+                        console.log(newUser);
+                        sg.API(mail, function(response){
+                            console.log(response.statusCode);
+                            console.log(response.body);
+                            console.log(response.headers);
+                            console.log('email sent!')
+                        });
                         return done(null, newUser);
-                        console.log('user created')
-                        console.log(newUser)
                     }
                     
                 });

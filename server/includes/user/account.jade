@@ -1,4 +1,4 @@
-form
+form(method="post", action="/app/user/updateAcct") 
 	.row
 		.col-md-4.text-right
 			h3.title Profile
@@ -50,6 +50,7 @@ form
 								label.control-label Zip
 								input.form-control(value="#{ user.zip}", name="zip")
 								span.material-input
+
 	.row
 		.col-md-4.text-right
 			h3.title Password

@@ -32,3 +32,8 @@ a:hover {
   top: 2px;
   left: 5px;
 }
+.updateCardWrap,
+.cc-newaddy,
+.updatingCard {
+  display: none;
+}
